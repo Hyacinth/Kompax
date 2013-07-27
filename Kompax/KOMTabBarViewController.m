@@ -24,7 +24,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         [self.tabBar setHidden:NO];
     }
     return self;
@@ -93,6 +92,7 @@
 - (void)change:(UIButton *)button {
     //设置选中框动态移动
     self.selectedIndex = button.tag;
+    
     [UIView beginAnimations:nil context:NULL];
     _selectView.frame = CGRectMake(0+ button.tag * 64, 0, 64, 49);
      [UIView commitAnimations];

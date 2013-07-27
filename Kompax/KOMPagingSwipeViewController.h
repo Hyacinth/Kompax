@@ -19,6 +19,6 @@
 @property(retain,nonatomic) NSMutableArray *viewControllers;
 
 - (IBAction)changePage:(id)sender;
-
+- (void)initialScrollView;
 
 @end

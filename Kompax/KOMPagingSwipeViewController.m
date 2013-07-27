@@ -92,17 +92,20 @@ static NSUInteger kNumberOfPages = 3;
             vc = [[UIViewController alloc]init];
             UILabel *label= [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 300, 20)];
             label.text = @"asd";
+            vc.view.tag = 100;
             [vc.view addSubview:label];
             break;
         }
         case 1:
         {
             vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+            vc.view.tag = 101;
             break;
         }
         case 2:
         {
             vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
+            vc.view.tag = 102;
             break;
         }
         default:
@@ -131,17 +134,17 @@ static NSUInteger kNumberOfPages = 3;
     currentPage = page;
  
     //翻到记账页时，自动弹出键盘
-    if (page==2)
-    {
-        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
-        [[acc cash] becomeFirstResponder];
-        [[acc cash] selectAll:self];
-    }
-    else
-    {
-        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
-        [[acc cash] resignFirstResponder];
-    }
+//    if (page==2)
+//    {
+//        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
+//        [[acc cash] becomeFirstResponder];
+//        [[acc cash] selectAll:self];
+//    }
+//    else
+//    {
+//        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
+//        [[acc cash] resignFirstResponder];
+//    }
 }
 
 

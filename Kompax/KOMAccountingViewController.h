@@ -11,11 +11,12 @@
 
 @class TableViewWithBlock;
 @interface KOMAccountingViewController : UIViewController{
+    
+    UIViewController *currentVC;
     BOOL isOpened;
 }
 
-@property (nonatomic,strong) IBOutlet UIScrollView *myscrollview;
-@property (nonatomic,strong) IBOutlet UITextField *cash;
+@property (strong, nonatomic) IBOutlet UIView *accView;
 
 @property (retain, nonatomic) IBOutlet UIButton *openButton;
 @property (retain, nonatomic) IBOutlet UITextField *inputTextField;
@@ -23,5 +24,9 @@
 - (IBAction)changeOpenStatus:(id)sender;
 
 @property (strong,nonatomic)   NSArray *way;
+@property (strong,nonatomic) NSArray *controllers;
+
+
+- (IBAction)backgroundTap:(id)sender;
 
 @end
