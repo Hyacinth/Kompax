@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SelectionCell.h"
 #import "TableViewWithBlock.h"
+
 #import "KOMCostViewController.h"
 #import "KOMIncomeViewController.h"
 #import "KOMDebitViewController.h"
@@ -72,11 +73,19 @@
     
     _controllers = @[costVC,imcomeVC,debitVC,creditVC];
     currentVC = costVC;
+    
+    //添加子视图
     [self.view sendSubviewToBack:_accView];
     [_accView addSubview:creditVC.view];
     [_accView addSubview:debitVC.view];
     [_accView addSubview:imcomeVC.view];
     [_accView addSubview:costVC.view];
+    
+    //添加子视图控制器
+    [self addChildViewController:creditVC];
+    [self addChildViewController:debitVC];
+    [self addChildViewController:imcomeVC];
+    [self addChildViewController:costVC];
 }
 
 - (IBAction)changeOpenStatus:(id)sender {
@@ -130,13 +139,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)backgroundTap:(id)sender {
     [self.view endEditing:YES];
     if (isOpened) {
         [self changeOpenStatus:_openButton];
     }
 }
+
+
 
 
 @end

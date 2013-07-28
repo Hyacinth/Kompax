@@ -7,7 +7,6 @@
 //
 
 #import "KOMMainPageViewController.h"
-#import "KOMAccountingViewController.h";
 
 @interface KOMMainPageViewController ()
 
@@ -34,15 +33,13 @@
 //    swipeRecognizer.delegate = self;
 }
 
-//-(void)changeView {
-//    KOMAccountingViewController *accVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
-//    [self presentModalViewController:accVC animated:YES];
-//}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KOMAccountTableViewController.h"
 
-@interface KOMCostViewController : UIViewController
+@interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *cash;
+@property (strong, nonatomic) IBOutlet UILabel *accountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (strong,nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end

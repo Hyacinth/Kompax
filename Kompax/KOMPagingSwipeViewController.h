@@ -15,10 +15,7 @@
     int currentPage;            //记录用户当前访问的页
 }
 @property(retain,nonatomic) IBOutlet UIScrollView *scrollView;
-//@property(retain,nonatomic) IBOutlet UIPageControl *pageControl;
 @property(retain,nonatomic) NSMutableArray *viewControllers;
 
-- (IBAction)changePage:(id)sender;
-- (void)initialScrollView;
 
 @end

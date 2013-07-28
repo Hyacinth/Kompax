@@ -188,6 +188,8 @@
 		9372C04C179FEC8A00AB984B /* bank-citi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BFA6179FEC8A00AB984B /* bank-citi.png */; };
 		9372C04D179FEC8A00AB984B /* bank-icbc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BFA7179FEC8A00AB984B /* bank-icbc.png */; };
 		9389E99E17A06F020080DE7C /* KOMPagingSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9389E99D17A06F020080DE7C /* KOMPagingSwipeViewController.m */; };
+		93908D0017A4C66100A9F68B /* KOMAccountNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */; };
+		93908D0317A4C67300A9F68B /* KOMAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */; };
 		939912D6179783B9003E8AC2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 939912C4179783B9003E8AC2 /* AFHTTPClient.m */; };
 		939912D7179783B9003E8AC2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 939912C6179783B9003E8AC2 /* AFHTTPRequestOperation.m */; };
 		939912D8179783B9003E8AC2 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 939912C8179783B9003E8AC2 /* AFImageRequestOperation.m */; };
@@ -413,6 +415,10 @@
 		9372BFA7179FEC8A00AB984B /* bank-icbc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank-icbc.png"; sourceTree = "<group>"; };
 		9389E99C17A06F020080DE7C /* KOMPagingSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMPagingSwipeViewController.h; sourceTree = "<group>"; };
 		9389E99D17A06F020080DE7C /* KOMPagingSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMPagingSwipeViewController.m; sourceTree = "<group>"; };
+		93908CFE17A4C66100A9F68B /* KOMAccountNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMAccountNavViewController.h; sourceTree = "<group>"; };
+		93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMAccountNavViewController.m; sourceTree = "<group>"; };
+		93908D0117A4C67300A9F68B /* KOMAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMAccountTableViewController.h; sourceTree = "<group>"; };
+		93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMAccountTableViewController.m; sourceTree = "<group>"; };
 		939912C3179783B9003E8AC2 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		939912C4179783B9003E8AC2 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		939912C5179783B9003E8AC2 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -963,6 +969,10 @@
 		93B3782D17A3C777003541D7 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				93908CFE17A4C66100A9F68B /* KOMAccountNavViewController.h */,
+				93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */,
+				93908D0117A4C67300A9F68B /* KOMAccountTableViewController.h */,
+				93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -1241,6 +1251,8 @@
 				93B3782617A3729B003541D7 /* KOMIncomeViewController.m in Sources */,
 				93B3782917A372D2003541D7 /* KOMDebitViewController.m in Sources */,
 				93B3782C17A372D9003541D7 /* KOMCreditViewController.m in Sources */,
+				93908D0017A4C66100A9F68B /* KOMAccountNavViewController.m in Sources */,
+				93908D0317A4C67300A9F68B /* KOMAccountTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

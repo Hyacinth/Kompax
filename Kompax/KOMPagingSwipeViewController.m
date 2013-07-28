@@ -8,6 +8,7 @@
 
 #import "KOMPagingSwipeViewController.h"
 #import "KOMAccountingViewController.h"
+#import "KOMMainPageViewController.h"
 
 static NSUInteger kNumberOfPages = 3;
 
@@ -98,13 +99,13 @@ static NSUInteger kNumberOfPages = 3;
         }
         case 1:
         {
-            vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
+            vc = (KOMMainPageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
             vc.view.tag = 101;
             break;
         }
         case 2:
         {
-            vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
+            vc =(KOMAccountingViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
             vc.view.tag = 102;
             break;
         }
@@ -122,6 +123,7 @@ static NSUInteger kNumberOfPages = 3;
         frame.origin.y = 0;
         vc.view.frame = frame;
         [_scrollView addSubview:vc.view];
+        [self addChildViewController:vc];
     }
     
 }

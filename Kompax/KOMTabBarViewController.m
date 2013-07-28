@@ -13,6 +13,7 @@
 #import "KOMUserViewController.h"
 #import "KOMPagingSwipeViewController.h"
 #import "KOMMainPageViewController.h"
+#import "KOMAccountNavViewController.h"
 
 @interface KOMTabBarViewController ()
 
@@ -42,8 +43,6 @@
     KOMPlanningViewController *planVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Planning"];
     KOMStatisticViewController *staVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Statistic"];
     KOMPagingSwipeViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PageSwipe"];
-    
-//    KOMMainPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
     KOMUserViewController *userVC = [self.storyboard instantiateViewControllerWithIdentifier:@"User"];
     KOMSettingViewController *setVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Setting"];
     

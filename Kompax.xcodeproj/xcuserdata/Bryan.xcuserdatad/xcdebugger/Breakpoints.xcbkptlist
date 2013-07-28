@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMAccountingViewController.m"
-         timestampString = "396608125.853648"
+         timestampString = "396686936.156199"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "-backgroundTap:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,13 +21,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMCostViewController.m"
-         timestampString = "396598659.235129"
+         timestampString = "396712273.793367"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-bgTap:"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kompax/AFNetworking/AFHTTPClient.h"
+         timestampString = "396712733.714936"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "80"
+         endingLineNumber = "80">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
