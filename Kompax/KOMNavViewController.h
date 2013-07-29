@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KOMAccountNavViewController : UINavigationController
+@interface KOMNavViewController : UINavigationController
 
 @end

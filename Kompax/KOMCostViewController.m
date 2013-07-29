@@ -8,7 +8,8 @@
 
 #import "KOMCostViewController.h"
 #import "KOMAccountingViewController.h"
-#import "KOMAccountNavViewController.h"
+#import "KOMNavViewController.h"
+#import "KOMTimePickerViewController.h"
 
 @interface KOMCostViewController ()
 
@@ -20,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -29,17 +30,32 @@
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view.
+    //初始化时间
+    NSTimeZone* localzone = [NSTimeZone localTimeZone];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:GLOBAL_TIMEFORMAT];
+    [formatter setTimeZone:localzone];
+    _timeLabel.text = [formatter stringFromDate:[NSDate date]];
+    
+    //初始化账户
+    _accountLabel.text = @"现金";
+    //初始化成员
+    _memberLabel.text = @"自己";
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     //设置标签可点击
     [self.accountLabel setUserInteractionEnabled:YES];
-    UITapGestureRecognizer *tapForAcc = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentAcc:)];
+    UITapGestureRecognizer *tapForAcc = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentAcc)];
     UITapGestureRecognizer *tapForTime = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentTimePicker)];
+    UITapGestureRecognizer *tapForMember = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentMember)];
+    
     [self.accountLabel addGestureRecognizer:tapForAcc];
     [self.timeLabel addGestureRecognizer:tapForTime];
+    [self.memberLabel addGestureRecognizer:tapForMember];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,22 +64,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+//点击子视图空白处能够隐藏键盘
 - (IBAction)bgTap:(id)sender {
     
      [self.view endEditing:YES];
-    //3层nextResponder才到KOMAccountingViewController
-    if ([self.nextResponder.nextResponder.nextResponder respondsToSelector:@selector(backgroundTap:)])
+  
+    if ([self.parentViewController respondsToSelector:@selector(backgroundTap:)])
     {
         KOMAccountingViewController *acc = 
-        (KOMAccountingViewController *)self.nextResponder.nextResponder.nextResponder ;
+        (KOMAccountingViewController *)self.parentViewController ;
         [acc backgroundTap:self];
     }
 }
 
 //显示账户选项
--(void)presentAcc:(id)sender {
-    KOMAccountNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
-    KOMAccountTableViewController *tableVC = [nav.childViewControllers objectAtIndex:0];
+-(void)presentAcc {
+    KOMNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
+    
+    KOMAccountTableViewController *tableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AccTable"];
+    [nav pushViewController:tableVC animated:NO];
+    
     //设置代理
     tableVC.delegate = self;
     
@@ -71,17 +91,43 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-
 //显示time picker
 -(void)presentTimePicker {
-//    _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 250, 320, 230)];
-//    [self.view addSubview:_datePicker];    
+    KOMNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
+    KOMTimePickerViewController *timeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TimePicker"];
+    [nav pushViewController:timeVC animated:NO];
+    
+    timeVC.delegate = self;
+    
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
+-(void)presentMember {
+    KOMNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
+    KOMTimePickerViewController *memberVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MemberTable"];
+    [nav pushViewController:memberVC animated:NO];
+    
+    memberVC.delegate = self;
+    
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 #pragma mark - KOMAccountTableViewController delegate
 -(void)changeAccount:(NSString *)text {
     self.accountLabel.text = text;
 }
+
+#pragma  mark - KOMTimePickerViewController delegate
+-(void)changeTimeText:(NSString *)text {
+    self.timeLabel.text = text;
+}
+
+#pragma  mark - KOMMemberTableViewController delegate
+-(void)changeMember:(NSString *)text {
+    self.memberLabel.text = text;
+}
+
 
 @end

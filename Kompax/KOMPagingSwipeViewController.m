@@ -136,17 +136,16 @@ static NSUInteger kNumberOfPages = 3;
     currentPage = page;
  
     //翻到记账页时，自动弹出键盘
-//    if (page==2)
-//    {
-//        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
-//        [[acc cash] becomeFirstResponder];
-//        [[acc cash] selectAll:self];
-//    }
-//    else
-//    {
-//        KOMAccountingViewController *acc = [_viewControllers objectAtIndex:2];
-//        [[acc cash] resignFirstResponder];
-//    }
+    if (page==2)
+    {
+        KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
+       
+    }
+    else
+    {
+       KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
+       
+    }
 }
 
 

@@ -88,6 +88,7 @@
     [self addChildViewController:costVC];
 }
 
+
 - (IBAction)changeOpenStatus:(id)sender {
     
     if (isOpened) {

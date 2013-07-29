@@ -13,7 +13,6 @@
 #import "KOMUserViewController.h"
 #import "KOMPagingSwipeViewController.h"
 #import "KOMMainPageViewController.h"
-#import "KOMAccountNavViewController.h"
 
 @interface KOMTabBarViewController ()
 

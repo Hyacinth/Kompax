@@ -187,8 +187,9 @@
 		9372C04B179FEC8A00AB984B /* bank-china.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BFA5179FEC8A00AB984B /* bank-china.png */; };
 		9372C04C179FEC8A00AB984B /* bank-citi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BFA6179FEC8A00AB984B /* bank-citi.png */; };
 		9372C04D179FEC8A00AB984B /* bank-icbc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BFA7179FEC8A00AB984B /* bank-icbc.png */; };
+		9381F24C17A67D9B0030534D /* KOMMemberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9381F24B17A67D9B0030534D /* KOMMemberTableViewController.m */; };
 		9389E99E17A06F020080DE7C /* KOMPagingSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9389E99D17A06F020080DE7C /* KOMPagingSwipeViewController.m */; };
-		93908D0017A4C66100A9F68B /* KOMAccountNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */; };
+		93908D0017A4C66100A9F68B /* KOMNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93908CFF17A4C66100A9F68B /* KOMNavViewController.m */; };
 		93908D0317A4C67300A9F68B /* KOMAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */; };
 		939912D6179783B9003E8AC2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 939912C4179783B9003E8AC2 /* AFHTTPClient.m */; };
 		939912D7179783B9003E8AC2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 939912C6179783B9003E8AC2 /* AFHTTPRequestOperation.m */; };
@@ -225,6 +226,7 @@
 		93E9B5BB179E53B80077F807 /* KOMUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9B5BA179E53B80077F807 /* KOMUserViewController.m */; };
 		93E9B5BE179E840E0077F807 /* EmailSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9B5BD179E840E0077F807 /* EmailSelectionCell.m */; };
 		93E9B5C2179E8A2D0077F807 /* EmailSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E9B5C1179E8A2D0077F807 /* EmailSelectionCell.xib */; };
+		93FC3FEB17A61769001B71D6 /* KOMTimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FC3FEA17A61769001B71D6 /* KOMTimePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -413,10 +415,12 @@
 		9372BFA5179FEC8A00AB984B /* bank-china.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank-china.png"; sourceTree = "<group>"; };
 		9372BFA6179FEC8A00AB984B /* bank-citi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank-citi.png"; sourceTree = "<group>"; };
 		9372BFA7179FEC8A00AB984B /* bank-icbc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank-icbc.png"; sourceTree = "<group>"; };
+		9381F24A17A67D9B0030534D /* KOMMemberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMMemberTableViewController.h; sourceTree = "<group>"; };
+		9381F24B17A67D9B0030534D /* KOMMemberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMMemberTableViewController.m; sourceTree = "<group>"; };
 		9389E99C17A06F020080DE7C /* KOMPagingSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMPagingSwipeViewController.h; sourceTree = "<group>"; };
 		9389E99D17A06F020080DE7C /* KOMPagingSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMPagingSwipeViewController.m; sourceTree = "<group>"; };
-		93908CFE17A4C66100A9F68B /* KOMAccountNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMAccountNavViewController.h; sourceTree = "<group>"; };
-		93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMAccountNavViewController.m; sourceTree = "<group>"; };
+		93908CFE17A4C66100A9F68B /* KOMNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMNavViewController.h; sourceTree = "<group>"; };
+		93908CFF17A4C66100A9F68B /* KOMNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMNavViewController.m; sourceTree = "<group>"; };
 		93908D0117A4C67300A9F68B /* KOMAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMAccountTableViewController.h; sourceTree = "<group>"; };
 		93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMAccountTableViewController.m; sourceTree = "<group>"; };
 		939912C3179783B9003E8AC2 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -483,6 +487,8 @@
 		93E9B5BC179E840D0077F807 /* EmailSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailSelectionCell.h; sourceTree = "<group>"; };
 		93E9B5BD179E840E0077F807 /* EmailSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailSelectionCell.m; sourceTree = "<group>"; };
 		93E9B5C1179E8A2D0077F807 /* EmailSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailSelectionCell.xib; sourceTree = "<group>"; };
+		93FC3FE917A61769001B71D6 /* KOMTimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMTimePickerViewController.h; sourceTree = "<group>"; };
+		93FC3FEA17A61769001B71D6 /* KOMTimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMTimePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -969,10 +975,14 @@
 		93B3782D17A3C777003541D7 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				93908CFE17A4C66100A9F68B /* KOMAccountNavViewController.h */,
-				93908CFF17A4C66100A9F68B /* KOMAccountNavViewController.m */,
+				93908CFE17A4C66100A9F68B /* KOMNavViewController.h */,
+				93908CFF17A4C66100A9F68B /* KOMNavViewController.m */,
 				93908D0117A4C67300A9F68B /* KOMAccountTableViewController.h */,
 				93908D0217A4C67300A9F68B /* KOMAccountTableViewController.m */,
+				93FC3FE917A61769001B71D6 /* KOMTimePickerViewController.h */,
+				93FC3FEA17A61769001B71D6 /* KOMTimePickerViewController.m */,
+				9381F24A17A67D9B0030534D /* KOMMemberTableViewController.h */,
+				9381F24B17A67D9B0030534D /* KOMMemberTableViewController.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -1251,8 +1261,10 @@
 				93B3782617A3729B003541D7 /* KOMIncomeViewController.m in Sources */,
 				93B3782917A372D2003541D7 /* KOMDebitViewController.m in Sources */,
 				93B3782C17A372D9003541D7 /* KOMCreditViewController.m in Sources */,
-				93908D0017A4C66100A9F68B /* KOMAccountNavViewController.m in Sources */,
+				93908D0017A4C66100A9F68B /* KOMNavViewController.m in Sources */,
 				93908D0317A4C67300A9F68B /* KOMAccountTableViewController.m in Sources */,
+				93FC3FEB17A61769001B71D6 /* KOMTimePickerViewController.m in Sources */,
+				9381F24C17A67D9B0030534D /* KOMMemberTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

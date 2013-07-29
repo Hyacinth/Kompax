@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Bryan. All rights reserved.
 //
 
-#import "KOMAccountNavViewController.h"
+#import "KOMNavViewController.h"
 
-@interface KOMAccountNavViewController ()
+@interface KOMNavViewController ()
 
 @end
 
-@implementation KOMAccountNavViewController
+@implementation KOMNavViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,10 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStyleBordered target:self action:@selector(backToTabbar:)];
-    
-    self.navigationItem.leftBarButtonItem = back;
     
     
 	// Do any additional setup after loading the view.

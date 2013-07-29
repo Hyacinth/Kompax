@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "KOMAccountTableViewController.h"
+#import "KOMTimePickerViewController.h"
+#import "KOMMemberTableViewController.h"
 
-@interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate>
+static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
+
+@interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMMemberTableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *cash;
 @property (strong, nonatomic) IBOutlet UILabel *accountLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
-
-@property (strong,nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong,nonatomic) IBOutlet UILabel *memberLabel;
 
 @end
