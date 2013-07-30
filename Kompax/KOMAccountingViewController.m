@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.way = [NSArray arrayWithObjects:@"支出",@"收入",@"借记",@"贷记", nil];
     
     //初始化下拉菜单

@@ -10,14 +10,21 @@
 #import "KOMAccountTableViewController.h"
 #import "KOMTimePickerViewController.h"
 #import "KOMMemberTableViewController.h"
+#import "KOMCategoryTableViewController.h"
 
 static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 
-@interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMMemberTableViewDelegate>
+@interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMMemberTableViewDelegate,KOMCategoryTableViewDelegate>
+{
+    @private
+    double planedCost;              //本月计划支出
+    double didCost;                 //本月已支出
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *cash;
 @property (strong, nonatomic) IBOutlet UILabel *accountLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong,nonatomic) IBOutlet UILabel *memberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @end

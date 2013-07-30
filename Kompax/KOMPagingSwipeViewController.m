@@ -9,6 +9,7 @@
 #import "KOMPagingSwipeViewController.h"
 #import "KOMAccountingViewController.h"
 #import "KOMMainPageViewController.h"
+#import "KOMCostViewController.h"
 
 static NSUInteger kNumberOfPages = 3;
 
@@ -31,6 +32,7 @@ static NSUInteger kNumberOfPages = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -40,8 +42,9 @@ static NSUInteger kNumberOfPages = 3;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)awakeFromNib
+- (void)loadView
 {
+    [super loadView];
     // view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
@@ -85,28 +88,24 @@ static NSUInteger kNumberOfPages = 3;
         return;
     
     //要load的controller
-    UIViewController *vc = nil;
-    
+    UIViewController *vc  = nil;
     switch (page) {
         case 0:
         {
             vc = [[UIViewController alloc]init];
             UILabel *label= [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 300, 20)];
             label.text = @"asd";
-            vc.view.tag = 100;
             [vc.view addSubview:label];
             break;
         }
         case 1:
         {
             vc = (KOMMainPageViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"MainPage"];
-            vc.view.tag = 101;
             break;
         }
         case 2:
         {
-            vc =(KOMAccountingViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
-            vc.view.tag = 102;
+            vc = (KOMAccountingViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"Acc"];
             break;
         }
         default:
@@ -114,8 +113,7 @@ static NSUInteger kNumberOfPages = 3;
     }
     [_viewControllers replaceObjectAtIndex:page withObject:vc];
     
-    
-    // add the controller's view to the scroll view
+    //将子视图添加到scrollview中
     if (vc.view.superview == nil)
     {
         CGRect frame = _scrollView.frame;
@@ -125,29 +123,28 @@ static NSUInteger kNumberOfPages = 3;
         [_scrollView addSubview:vc.view];
         [self addChildViewController:vc];
     }
-    
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{	
-    // Switch the indicator when more than 50% of the previous/next page is visible
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
     CGFloat pageWidth = _scrollView.frame.size.width;
     int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     currentPage = page;
- 
-    //翻到记账页时，自动弹出键盘
-    if (page==2)
+    
+    if (currentPage==2)
     {
         KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
-       
+        KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
+        [costVC.cash becomeFirstResponder];
+        [costVC.cash selectAll:self];
     }
     else
     {
-       KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
-       
+        KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
+        KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
+        [costVC.cash resignFirstResponder];
     }
 }
-
 
 
 @end

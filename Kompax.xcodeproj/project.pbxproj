@@ -21,6 +21,8 @@
 		934A646A1796476A00E28837 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 934A64691796476A00E28837 /* Default-568h@2x.png */; };
 		934A646D1796476A00E28837 /* mainstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934A646B1796476A00E28837 /* mainstoryboard.storyboard */; };
 		934A64701796476A00E28837 /* KOMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A646F1796476A00E28837 /* KOMLoginViewController.m */; };
+		9366415717A76A6900DBA0E1 /* KOMCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */; };
+		9366415A17A7B33900DBA0E1 /* KOMDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415917A7B33900DBA0E1 /* KOMDraw.m */; };
 		9372BFA8179FEC8A00AB984B /* alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF5179FEC8900AB984B /* alert@2x.png */; };
 		9372BFA9179FEC8A00AB984B /* arrow-black-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF6179FEC8900AB984B /* arrow-black-down@2x.png */; };
 		9372BFAA179FEC8A00AB984B /* arrow-orange-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF7179FEC8900AB984B /* arrow-orange-small@2x.png */; };
@@ -249,6 +251,10 @@
 		934A646C1796476A00E28837 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/mainstoryboard.storyboard; sourceTree = "<group>"; };
 		934A646E1796476A00E28837 /* KOMLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KOMLoginViewController.h; sourceTree = "<group>"; };
 		934A646F1796476A00E28837 /* KOMLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KOMLoginViewController.m; sourceTree = "<group>"; };
+		9366415517A76A6900DBA0E1 /* KOMCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMCategoryTableViewController.h; sourceTree = "<group>"; };
+		9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMCategoryTableViewController.m; sourceTree = "<group>"; };
+		9366415817A7B33900DBA0E1 /* KOMDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMDraw.h; sourceTree = "<group>"; };
+		9366415917A7B33900DBA0E1 /* KOMDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMDraw.m; sourceTree = "<group>"; };
 		9372BEF5179FEC8900AB984B /* alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert@2x.png"; sourceTree = "<group>"; };
 		9372BEF6179FEC8900AB984B /* arrow-black-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-black-down@2x.png"; sourceTree = "<group>"; };
 		9372BEF7179FEC8900AB984B /* arrow-orange-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-orange-small@2x.png"; sourceTree = "<group>"; };
@@ -968,6 +974,8 @@
 				93B3782817A372D2003541D7 /* KOMDebitViewController.m */,
 				93B3782A17A372D9003541D7 /* KOMCreditViewController.h */,
 				93B3782B17A372D9003541D7 /* KOMCreditViewController.m */,
+				9366415817A7B33900DBA0E1 /* KOMDraw.h */,
+				9366415917A7B33900DBA0E1 /* KOMDraw.m */,
 			);
 			name = Accounting;
 			sourceTree = "<group>";
@@ -983,6 +991,8 @@
 				93FC3FEA17A61769001B71D6 /* KOMTimePickerViewController.m */,
 				9381F24A17A67D9B0030534D /* KOMMemberTableViewController.h */,
 				9381F24B17A67D9B0030534D /* KOMMemberTableViewController.m */,
+				9366415517A76A6900DBA0E1 /* KOMCategoryTableViewController.h */,
+				9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -1265,6 +1275,8 @@
 				93908D0317A4C67300A9F68B /* KOMAccountTableViewController.m in Sources */,
 				93FC3FEB17A61769001B71D6 /* KOMTimePickerViewController.m in Sources */,
 				9381F24C17A67D9B0030534D /* KOMMemberTableViewController.m in Sources */,
+				9366415717A76A6900DBA0E1 /* KOMCategoryTableViewController.m in Sources */,
+				9366415A17A7B33900DBA0E1 /* KOMDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
