@@ -14,15 +14,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"390840763@qq.com",@"email",@"123456",@"password", nil];
+//     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"390840763@qq.com",@"email",@"123456",@"password", nil];
+//    
+//
+//    NSString *path = [NSString stringWithFormat:@"http://1.guhaiyue.sinaapp.com/index.php/Login/login"];
+//    NSURL *url = [NSURL URLWithString:path];
+//    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
+//    [client setParameterEncoding:AFJSONParameterEncoding];
     
-
-    NSString *path = [NSString stringWithFormat:@"http://1.guhaiyue.sinaapp.com/index.php/Login/login"];
-    NSURL *url = [NSURL URLWithString:path];
-    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
-    [client setParameterEncoding:AFJSONParameterEncoding];
-    
-    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:nil parameters:dict];
+  //  NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:nil parameters:dict];
     
 //    AFURLConnectionOperation *operation = [[AFURLConnectionOperation alloc]initWithRequest:request];
 //    operation.completionBlock = ^{

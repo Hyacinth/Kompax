@@ -11,7 +11,10 @@
 #import "KOMNavViewController.h"
 #import "KOMTimePickerViewController.h"
 #import "KOMCategoryTableViewController.h"
-#import "KOMDraw.h"
+#import "KOMBarDraw.h"
+#import "KOMConstants.h"
+
+static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 
 @interface KOMCostViewController ()
 
@@ -43,7 +46,8 @@
     _accountLabel.text = @"现金"; //初始化账户
     _memberLabel.text = @"自己";  //初始化成员
     
-    
+    planedCost = 700.0f;
+    didCost = 200.0f;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,6 +65,32 @@
     [self.memberLabel addGestureRecognizer:tapForMember];
     [self.categoryLabel addGestureRecognizer:tapForCategory];
     
+    [self calculateAndDraw];
+}
+
+//计算当前支出与计划支出大小关系并且画图
+-(void)calculateAndDraw {
+
+    KOMBarDraw *draw = (KOMBarDraw *)self.view;
+    
+    double current = [_cash.text doubleValue];
+    
+    
+    if (didCost + current <= planedCost) {
+        
+        draw.drawingMode = kNotOverspend;
+        draw.larger = planedCost;
+        draw.smaller = didCost + current;
+        
+    }   //未超支
+    else {
+        draw.drawingMode = kOverspend;
+        draw.smaller = planedCost;
+        draw.larger = didCost + current;
+    }   //已超支
+    
+    //画图
+    [draw setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,10 +102,8 @@
 //点击子视图空白处能够隐藏键盘
 - (IBAction)bgTap:(id)sender {
     
-    KOMDraw *draw = (KOMDraw *)self.view;
-    //NSLog(@"%@",self.view);
-    [(KOMDraw *)self.view setNeedsDisplay];
-
+    NSLog(@"test");
+    [self calculateAndDraw];
     
     if ([self.parentViewController respondsToSelector:@selector(backgroundTap:)])
     {

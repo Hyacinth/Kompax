@@ -24,27 +24,6 @@
     self.againText.layer.borderColor = col.CGColor;
     self.againText.layer.borderWidth = 1.5;
     
-    NSString *email = _mailText.text;
-    NSString *password = _passwordText.text;
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:email,@"email",password,@"password", nil];
-    
-    /*NSURL *url = [NSURL URLWithString:@"http://3.compax.sinaapp.com/index.php"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
-    [client setParameterEncoding:AFJSONParameterEncoding];
-    
-    
-    NSURLConnection *connet = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-    
-    AFURLConnectionOperation *operation = [[AFURLConnectionOperation alloc]initWithRequest:request];
-    operation.completionBlock = ^{
-        NSLog(@"%@",operation.responseString);
-    };
-    
-    [connet start];*/
-    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

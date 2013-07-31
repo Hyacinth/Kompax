@@ -165,7 +165,11 @@ static const CGFloat kHeight = 36.0f;
             checked = !checked;
             [self updateCheckBoxImage];
             if (delegate && stateChangedSelector) {
+//去掉selector泄露警告
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                 [delegate performSelector:stateChangedSelector withObject:self];
+#pragma clang diagnostic pop
             }
             else if (stateChangedBlock) {
                 stateChangedBlock(self);
@@ -224,5 +228,6 @@ static const CGFloat kHeight = 36.0f;
     checkBoxImageView.image = [self checkBoxImageForStyle:style
                                                   checked:checked];
 }
+
 
 @end

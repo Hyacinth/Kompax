@@ -12,7 +12,7 @@
 #import "KOMMemberTableViewController.h"
 #import "KOMCategoryTableViewController.h"
 
-static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
+
 
 @interface KOMCostViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMMemberTableViewDelegate,KOMCategoryTableViewDelegate>
 {
@@ -26,5 +26,7 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong,nonatomic) IBOutlet UILabel *memberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
+
+-(void)calculateAndDraw ;
 
 @end

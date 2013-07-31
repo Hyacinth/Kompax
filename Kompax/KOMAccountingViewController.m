@@ -141,6 +141,11 @@
 }
 
 - (IBAction)backgroundTap:(id)sender {
+    
+    //更新cost视图的cashbar数据显示
+    KOMCostViewController *costVC = [self.childViewControllers objectAtIndex:3];
+    [costVC calculateAndDraw];
+    
     [self.view endEditing:YES];
     if (isOpened) {
         [self changeOpenStatus:_openButton];

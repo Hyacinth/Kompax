@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9322BA96179F7788006F08B8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322BA95179F7788006F08B8 /* Default@2x.png */; };
-		9322BA98179F778E006F08B8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322BA97179F778E006F08B8 /* Default.png */; };
-		9322BA9A179F77DE006F08B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322BA99179F77DE006F08B8 /* Default-568h@2x.png */; };
 		934A64541796476A00E28837 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64531796476A00E28837 /* UIKit.framework */; };
 		934A64561796476A00E28837 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64551796476A00E28837 /* Foundation.framework */; };
 		934A64581796476A00E28837 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64571796476A00E28837 /* CoreGraphics.framework */; };
@@ -22,7 +19,7 @@
 		934A646D1796476A00E28837 /* mainstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934A646B1796476A00E28837 /* mainstoryboard.storyboard */; };
 		934A64701796476A00E28837 /* KOMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A646F1796476A00E28837 /* KOMLoginViewController.m */; };
 		9366415717A76A6900DBA0E1 /* KOMCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */; };
-		9366415A17A7B33900DBA0E1 /* KOMDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415917A7B33900DBA0E1 /* KOMDraw.m */; };
+		9366415A17A7B33900DBA0E1 /* KOMBarDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415917A7B33900DBA0E1 /* KOMBarDraw.m */; };
 		9372BFA8179FEC8A00AB984B /* alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF5179FEC8900AB984B /* alert@2x.png */; };
 		9372BFA9179FEC8A00AB984B /* arrow-black-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF6179FEC8900AB984B /* arrow-black-down@2x.png */; };
 		9372BFAA179FEC8A00AB984B /* arrow-orange-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BEF7179FEC8900AB984B /* arrow-orange-small@2x.png */; };
@@ -38,7 +35,6 @@
 		9372BFB4179FEC8A00AB984B /* choice-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF01179FEC8900AB984B /* choice-box@2x.png */; };
 		9372BFB5179FEC8A00AB984B /* choice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF02179FEC8900AB984B /* choice@2x.png */; };
 		9372BFB6179FEC8A00AB984B /* creditor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF03179FEC8900AB984B /* creditor@2x.png */; };
-		9372BFB7179FEC8A00AB984B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF04179FEC8900AB984B /* Default@2x.png */; };
 		9372BFB8179FEC8A00AB984B /* logo-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF05179FEC8900AB984B /* logo-black@2x.png */; };
 		9372BFB9179FEC8A00AB984B /* logo-orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF06179FEC8900AB984B /* logo-orange@2x.png */; };
 		9372BFBA179FEC8A00AB984B /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF07179FEC8900AB984B /* point@2x.png */; };
@@ -121,7 +117,6 @@
 		9372C007179FEC8A00AB984B /* choice-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF5B179FEC8A00AB984B /* choice-box.png */; };
 		9372C008179FEC8A00AB984B /* choice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF5C179FEC8A00AB984B /* choice.png */; };
 		9372C009179FEC8A00AB984B /* creditor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF5D179FEC8A00AB984B /* creditor.png */; };
-		9372C00A179FEC8A00AB984B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF5E179FEC8A00AB984B /* Default.png */; };
 		9372C00B179FEC8A00AB984B /* logo-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF5F179FEC8A00AB984B /* logo-black.png */; };
 		9372C00C179FEC8A00AB984B /* logo-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF60179FEC8A00AB984B /* logo-orange.png */; };
 		9372C00D179FEC8A00AB984B /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 9372BF61179FEC8A00AB984B /* point.png */; };
@@ -235,6 +230,7 @@
 		9322BA95179F7788006F08B8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9322BA97179F778E006F08B8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9322BA99179F77DE006F08B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9331F3D417A927CE008FA3C5 /* KOMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMConstants.h; sourceTree = "<group>"; };
 		934A64501796476A00E28837 /* Kompax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kompax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934A64531796476A00E28837 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		934A64551796476A00E28837 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -253,8 +249,8 @@
 		934A646F1796476A00E28837 /* KOMLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KOMLoginViewController.m; sourceTree = "<group>"; };
 		9366415517A76A6900DBA0E1 /* KOMCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMCategoryTableViewController.h; sourceTree = "<group>"; };
 		9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMCategoryTableViewController.m; sourceTree = "<group>"; };
-		9366415817A7B33900DBA0E1 /* KOMDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMDraw.h; sourceTree = "<group>"; };
-		9366415917A7B33900DBA0E1 /* KOMDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMDraw.m; sourceTree = "<group>"; };
+		9366415817A7B33900DBA0E1 /* KOMBarDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMBarDraw.h; sourceTree = "<group>"; };
+		9366415917A7B33900DBA0E1 /* KOMBarDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMBarDraw.m; sourceTree = "<group>"; };
 		9372BEF5179FEC8900AB984B /* alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert@2x.png"; sourceTree = "<group>"; };
 		9372BEF6179FEC8900AB984B /* arrow-black-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-black-down@2x.png"; sourceTree = "<group>"; };
 		9372BEF7179FEC8900AB984B /* arrow-orange-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-orange-small@2x.png"; sourceTree = "<group>"; };
@@ -551,6 +547,7 @@
 				939E9DC817992D2600C7307F /* Ancillary File */,
 				934A64621796476A00E28837 /* KOMAppDelegate.h */,
 				934A64631796476A00E28837 /* KOMAppDelegate.m */,
+				9331F3D417A927CE008FA3C5 /* KOMConstants.h */,
 				934A646B1796476A00E28837 /* mainstoryboard.storyboard */,
 				93E9B5B9179E53B70077F807 /* KOMUserViewController.h */,
 				93E9B5BA179E53B80077F807 /* KOMUserViewController.m */,
@@ -974,8 +971,8 @@
 				93B3782817A372D2003541D7 /* KOMDebitViewController.m */,
 				93B3782A17A372D9003541D7 /* KOMCreditViewController.h */,
 				93B3782B17A372D9003541D7 /* KOMCreditViewController.m */,
-				9366415817A7B33900DBA0E1 /* KOMDraw.h */,
-				9366415917A7B33900DBA0E1 /* KOMDraw.m */,
+				9366415817A7B33900DBA0E1 /* KOMBarDraw.h */,
+				9366415917A7B33900DBA0E1 /* KOMBarDraw.m */,
 			);
 			name = Accounting;
 			sourceTree = "<group>";
@@ -1060,9 +1057,6 @@
 				93AC95AD1798E808005E9E29 /* cb_glossy_on@2x.png in Resources */,
 				939A665C179D191700F55B41 /* SelectionCell.xib in Resources */,
 				93E9B5C2179E8A2D0077F807 /* EmailSelectionCell.xib in Resources */,
-				9322BA96179F7788006F08B8 /* Default@2x.png in Resources */,
-				9322BA98179F778E006F08B8 /* Default.png in Resources */,
-				9322BA9A179F77DE006F08B8 /* Default-568h@2x.png in Resources */,
 				9372BFA8179FEC8A00AB984B /* alert@2x.png in Resources */,
 				9372BFA9179FEC8A00AB984B /* arrow-black-down@2x.png in Resources */,
 				9372BFAA179FEC8A00AB984B /* arrow-orange-small@2x.png in Resources */,
@@ -1078,7 +1072,6 @@
 				9372BFB4179FEC8A00AB984B /* choice-box@2x.png in Resources */,
 				9372BFB5179FEC8A00AB984B /* choice@2x.png in Resources */,
 				9372BFB6179FEC8A00AB984B /* creditor@2x.png in Resources */,
-				9372BFB7179FEC8A00AB984B /* Default@2x.png in Resources */,
 				9372BFB8179FEC8A00AB984B /* logo-black@2x.png in Resources */,
 				9372BFB9179FEC8A00AB984B /* logo-orange@2x.png in Resources */,
 				9372BFBA179FEC8A00AB984B /* point@2x.png in Resources */,
@@ -1161,7 +1154,6 @@
 				9372C007179FEC8A00AB984B /* choice-box.png in Resources */,
 				9372C008179FEC8A00AB984B /* choice.png in Resources */,
 				9372C009179FEC8A00AB984B /* creditor.png in Resources */,
-				9372C00A179FEC8A00AB984B /* Default.png in Resources */,
 				9372C00B179FEC8A00AB984B /* logo-black.png in Resources */,
 				9372C00C179FEC8A00AB984B /* logo-orange.png in Resources */,
 				9372C00D179FEC8A00AB984B /* point.png in Resources */,
@@ -1276,7 +1268,7 @@
 				93FC3FEB17A61769001B71D6 /* KOMTimePickerViewController.m in Sources */,
 				9381F24C17A67D9B0030534D /* KOMMemberTableViewController.m in Sources */,
 				9366415717A76A6900DBA0E1 /* KOMCategoryTableViewController.m in Sources */,
-				9366415A17A7B33900DBA0E1 /* KOMDraw.m in Sources */,
+				9366415A17A7B33900DBA0E1 /* KOMBarDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
