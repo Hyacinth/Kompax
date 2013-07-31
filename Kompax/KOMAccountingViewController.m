@@ -125,8 +125,10 @@
             
             //设置下拉菜单frame
             CGRect frame=_tb.frame;      
-            frame.size.height=125;
+            frame.size.height=122;
             [_tb setFrame:frame];
+            [_tb setScrollEnabled:NO];  //无法滚动
+            
         } completion:^(BOOL finished){
             
             isOpened=YES;

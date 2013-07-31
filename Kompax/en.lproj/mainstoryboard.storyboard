@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="bgTap:" destination="JUo-uL-NzN" eventType="touchUpInside" id="F8o-pk-pS4"/>
                         </connections>
@@ -587,6 +587,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2110" y="-44"/>
         </scene>
+        <!--Income Category Table View Controller-->
+        <scene sceneID="PUO-Vz-GT9">
+            <objects>
+                <tableViewController storyboardIdentifier="IncomeCategory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n2H-rL-bMB" customClass="KOMIncomeCategoryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lnR-0Z-grm">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3Qu-RT-rNU">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n2H-rL-bMB" id="ci7-ba-ASB"/>
+                            <outlet property="delegate" destination="n2H-rL-bMB" id="4Ti-8h-O4Z"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebM-1c-zxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524" y="-44"/>
+        </scene>
         <!--KOMAccViewController-->
         <scene sceneID="nPK-jU-5qe">
             <objects>
@@ -695,7 +725,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="nff-BC-USj">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.76049017137096775" blue="0.94786416330645151" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="zH6-hO-Ume">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
@@ -735,7 +765,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="8IO-WN-U0a">
             <objects>
                 <viewController storyboardIdentifier="Imcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pAb-Jb-Qah" customClass="KOMIncomeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wDU-2K-VWE">
+                    <view key="view" contentMode="scaleToFill" id="wDU-2K-VWE" customClass="KOMBarDraw">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -835,10 +865,48 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" red="0.36078431370000003" green="0.58039215690000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HkA-9a-A9y">
+                                <rect key="frame" x="133" y="142" width="162" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DCU-Af-it7">
+                                <rect key="frame" x="133" y="191" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HsY-2o-xHj">
+                                <rect key="frame" x="133" y="240" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ywL-qW-jwf">
+                                <rect key="frame" x="113" y="54" width="182" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="bgTap:" destination="pAb-Jb-Qah" eventType="touchUpInside" id="MMZ-Wi-Jee"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="accountLabel" destination="HkA-9a-A9y" id="PxU-XP-rb6"/>
+                        <outlet property="cash" destination="eb6-Dk-wQ9" id="car-c4-7lR"/>
+                        <outlet property="categoryLabel" destination="ywL-qW-jwf" id="NLE-gB-5BH"/>
+                        <outlet property="memberLabel" destination="HsY-2o-xHj" id="b13-tQ-L0N"/>
+                        <outlet property="timeLabel" destination="DCU-Af-it7" id="12W-iE-vfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7m4-a4-sTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1074,7 +1142,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="30" height="45"/>
+        <image name="1.png" width="7.2002401351928711" height="10.800360679626465"/>
         <image name="2.png" width="30" height="45"/>
         <image name="3.png" width="30" height="45"/>
         <image name="4.png" width="30" height="45"/>
@@ -1095,104 +1163,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="时间.png" width="17" height="17"/>
         <image name="注册－确认按钮.png" width="105" height="33"/>
     </resources>
-    <classes>
-        <class className="KOMAccountTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMAccountTableViewController.h"/>
-        </class>
-        <class className="KOMAccountingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMAccountingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTap:"/>
-                <relationship kind="action" name="changeOpenStatus:"/>
-                <relationship kind="outlet" name="accView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="inputTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="openButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tb" candidateClass="TableViewWithBlock"/>
-            </relationships>
-        </class>
-        <class className="KOMBarDraw" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMBarDraw.h"/>
-        </class>
-        <class className="KOMCategoryTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMCategoryTableViewController.h"/>
-        </class>
-        <class className="KOMCostViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMCostViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="accountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cash" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="KOMCreditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMCreditViewController.h"/>
-        </class>
-        <class className="KOMDebitViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMDebitViewController.h"/>
-        </class>
-        <class className="KOMIncomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMIncomeViewController.h"/>
-        </class>
-        <class className="KOMLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="openButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rememberText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tb" candidateClass="TableViewWithBlock"/>
-            </relationships>
-        </class>
-        <class className="KOMMainPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMMainPageViewController.h"/>
-        </class>
-        <class className="KOMMemberTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMMemberTableViewController.h"/>
-        </class>
-        <class className="KOMNavViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMNavViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToTabbar:"/>
-            </relationships>
-        </class>
-        <class className="KOMPagingSwipeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMPagingSwipeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="KOMRegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTap:"/>
-                <relationship kind="action" name="textFieldDoneEditing:"/>
-                <relationship kind="outlet" name="againText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mailText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="KOMSettingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMSettingViewController.h"/>
-        </class>
-        <class className="KOMTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMTabBarViewController.h"/>
-        </class>
-        <class className="KOMTimePickerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KOMTimePickerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="TableViewWithBlock" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewWithBlock.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -14,5 +14,6 @@
 @property (assign,nonatomic) double larger;     //larger是计划支出与当前支出中较大者
 @property (assign,nonatomic) double smaller;    //smaller是计划支出与当前支出中较小者
 @property (assign,nonatomic) OverspendMode drawingMode;   //drawingMode记录画图模式（超过或者没超过计划）
+@property (assign,nonatomic) BarMode mode;
 
 @end

@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    kNotOverspend = 0,
-    kOverspend
+    kNotOverspent = 0,
+    kOverspent,
+    kNotOverearned,
+    kOverearned
 } OverspendMode;
 
 @interface KOMConstants : NSObject
 
+typedef enum {
+    kCostMode = 0,
+    kEarnMode
+} BarMode;
 
 @end

@@ -41,19 +41,14 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     
     [_timePicker addTarget:self action:@selector(timeChanged) forControlEvents:UIControlEventValueChanged];
     
-    UIButton *backBut = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [backBut setTitle:@"back" forState:UIControlStateNormal];
-    backBut.frame = CGRectMake(0, 0, 40, 35);
-    [backBut addTarget:self action:@selector(backUp:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithCustomView:backBut];
+    
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backUp:)];
     self.navigationItem.leftBarButtonItem = back;
     
-    UIButton *finishBut = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [finishBut setTitle:@"finish" forState:UIControlStateNormal];
-    finishBut.frame = CGRectMake(0, 0, 40, 35);
-    [finishBut addTarget:self action:@selector(finish:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *finish = [[UIBarButtonItem alloc]initWithCustomView:finishBut];
+    UIBarButtonItem *finish = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finish:)];
     self.navigationItem.rightBarButtonItem = finish;
+
+    
 }
 
 -(void)timeChanged {

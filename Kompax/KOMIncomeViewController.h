@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KOMAccountTableViewController.h"
+#import "KOMTimePickerViewController.h"
+#import "KOMMemberTableViewController.h"
+#import "KOMIncomeCategoryTableViewController.h"
 
-@interface KOMIncomeViewController : UIViewController
+
+@interface KOMIncomeViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMMemberTableViewDelegate,KOMIncomeCategoryDelegate>
+{
+@private
+    double planedEarn;              //本月计划支出
+    double didEarn;                 //本月已支出
+}
+
+@property (strong, nonatomic) IBOutlet UITextField *cash;
+@property (strong, nonatomic) IBOutlet UILabel *accountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong,nonatomic) IBOutlet UILabel *memberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
+
+-(void)calculateAndDraw ;
 
 @end

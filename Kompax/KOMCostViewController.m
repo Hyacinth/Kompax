@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Bryan. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "KOMCostViewController.h"
 #import "KOMAccountingViewController.h"
 #import "KOMNavViewController.h"
-#import "KOMTimePickerViewController.h"
-#import "KOMCategoryTableViewController.h"
 #import "KOMBarDraw.h"
 #import "KOMConstants.h"
+#import "XYAlertViewHeader.h"
 
 static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 
@@ -48,6 +48,41 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     
     planedCost = 700.0f;
     didCost = 200.0f;
+    
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showComfirm)];
+    [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self.view addGestureRecognizer:swipeRecognizer];   //给self.view添加一个手势监测；
+}
+
+//弹出确认保存警告框
+-(void)showComfirm {
+    [self.view endEditing:YES];
+    //询问是否保存
+    XYAlertView *alertView = [XYAlertView alertViewWithTitle:nil
+                                          message:@"确认保存该条记录吗？"
+                                          buttons:[NSArray arrayWithObjects:@"保存", @"不保存", nil]
+                                          afterDismiss:^(int buttonIndex) {
+                                                    if (buttonIndex == 0)   [self save];    //调用save函数
+                                                }];
+    //设置第二个按钮为灰色按钮
+    [alertView setButtonStyle:XYButtonStyleGray atIndex:1];
+    [alertView show];
+}
+
+//保存当前数据
+-(void)save {
+    //提示保存成功
+    XYAlertView *alertView = [XYAlertView alertViewWithTitle:nil
+                                                     message:@"保存成功！"
+                                                     buttons:[NSArray arrayWithObjects:@"好的", nil]
+                                                afterDismiss:^(int buttonIndex) {
+                                                }];
+    [alertView show];
+}
+
+//重新生成新的支出记录页面
+-(void)resetView {
+    NSLog(@"reset!");
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -75,16 +110,17 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     
     double current = [_cash.text doubleValue];
     
+    draw.mode = kCostMode;      //当前画图为支出画图模式
     
     if (didCost + current <= planedCost) {
         
-        draw.drawingMode = kNotOverspend;
+        draw.drawingMode = kNotOverspent;
         draw.larger = planedCost;
         draw.smaller = didCost + current;
         
     }   //未超支
     else {
-        draw.drawingMode = kOverspend;
+        draw.drawingMode = kOverspent;
         draw.smaller = planedCost;
         draw.larger = didCost + current;
     }   //已超支
@@ -102,7 +138,6 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 //点击子视图空白处能够隐藏键盘
 - (IBAction)bgTap:(id)sender {
     
-    NSLog(@"test");
     [self calculateAndDraw];
     
     if ([self.parentViewController respondsToSelector:@selector(backgroundTap:)])
@@ -129,25 +164,6 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     
     nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:nav animated:YES completion:nil];
-}
-
-//画cashbar函数
--(void)loadCashBar {
-    double inputCash = [_cash.text doubleValue];
-    
-    //计入本笔支出后尚未超出预算
-    if (didCost + inputCash <= planedCost) {
-        CGRect rect = CGRectMake(80, 80, 150, 30);
-        
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        
-        //设置矩形填充颜色：红色
-        CGContextSetRGBFillColor(context, 1.0, 0.0, 0.0, 1.0);
-        //填充矩形
-        CGContextFillRect(context, rect);
-        //执行绘画
-        CGContextStrokePath(context);
-    }
 }
 
 //显示time picker

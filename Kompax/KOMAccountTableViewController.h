@@ -19,5 +19,4 @@
 @property (strong,nonatomic) NSMutableArray *data;
 @property (assign,nonatomic) id<KOMAccountTableViewDelegate> delegate;
 
-
 @end

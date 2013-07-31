@@ -144,6 +144,9 @@ static NSUInteger kNumberOfPages = 3;
         KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
         [costVC.cash resignFirstResponder];
     }
+    if (currentPage == 1) {
+//        NSLog(@"mainPage");
+    }
 }
 
 

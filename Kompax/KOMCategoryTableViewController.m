@@ -28,11 +28,7 @@
     [super viewDidLoad];
     self.title = @"成员";
     //设置navigationbar上面的返回按钮
-    UIButton *backBut = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [backBut setTitle:@"back" forState:UIControlStateNormal];
-    backBut.frame = CGRectMake(0, 0, 40, 35);
-    [backBut addTarget:self action:@selector(backUp:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithCustomView:backBut];
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backUp:)];
     self.navigationItem.leftBarButtonItem = back;
     
     NSArray *diet = @[@"早餐",@"午餐",@"晚餐",@"宵夜"];

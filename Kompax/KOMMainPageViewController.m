@@ -26,13 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(changeView)];
-//    [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
-//    [self.view addGestureRecognizer:swipeRecognizer];//关键语句，给self.view添加一个手势监测；
-//    swipeRecognizer.delegate = self;
 }
-
 
 - (void)didReceiveMemoryWarning
 {

@@ -1,24 +1,24 @@
 //
-//  KOMAccountTableViewController.m
+//  KOMIncomeCategoryTableViewController.m
 //  Kompax
 //
-//  Created by Bryan on 13-7-28.
+//  Created by Bryan on 13-8-1.
 //  Copyright (c) 2013年 Bryan. All rights reserved.
 //
 
-#import "KOMAccountTableViewController.h"
+#import "KOMIncomeCategoryTableViewController.h"
 
-@interface KOMAccountTableViewController ()
+@interface KOMIncomeCategoryTableViewController ()
 
 @end
 
-@implementation KOMAccountTableViewController
+@implementation KOMIncomeCategoryTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        // Custom initialization
     }
     return self;
 }
@@ -26,12 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     //设置navigationbar上面的返回按钮
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backUp:)];
     self.navigationItem.leftBarButtonItem = back;
+    
+    _data = [NSMutableArray arrayWithObjects:@"工资",@"兼职",@"股票",@"基金",@"分红",@"利息",@"奖金",@"补贴",@"租金",@"其他", nil];
 
-    _data = [NSMutableArray arrayWithObjects:@"现金",@"信用卡",@"储蓄",@"网上支付", nil];
 }
 
 - (void)backUp:(id)sender {
@@ -46,15 +47,13 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [_data count];
 }
 
@@ -62,32 +61,31 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-       
+    
+    if (cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [_data objectAtIndex:row];
     
+    
     return cell;
 }
 
-
+/*
 // Override to support conditional editing of the table view.
-/*- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}*/
+}
+*/
 
-
-
+/*
 // Override to support editing the table view.
-
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_data removeObjectAtIndex:[indexPath row]];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
@@ -96,7 +94,6 @@
     }   
 }
 */
-
 
 /*
 // Override to support rearranging the table view.
@@ -119,7 +116,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *string = [_data objectAtIndex:indexPath.row];
-    [self.delegate changeAccount:string];
+    [self.delegate changeIncomeCategory:string];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.tableView reloadData];
 }
