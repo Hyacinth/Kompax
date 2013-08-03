@@ -42,7 +42,6 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     _timeLabel.text = [formatter stringFromDate:[NSDate date]];
     
     _categoryLabel.text = @"餐饮 > 早餐";
-    _cash.text = @"0.00";        //初始化现金
     _accountLabel.text = @"现金"; //初始化账户
     _memberLabel.text = @"自己";  //初始化成员
     
@@ -52,7 +51,14 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showComfirm)];
     [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
     [self.view addGestureRecognizer:swipeRecognizer];   //给self.view添加一个手势监测；
+    
+    //手动设置cash栏
+    _cash.text = @"0.00";        //初始化现金
+    _cash.font = [UIFont fontWithName:@"Helvetica" size:40];
+    _cash.textColor = [UIColor colorWithRed:239/255.0 green:100/255.0 blue:79/255.0 alpha:1.0];
+    _cash.textAlignment = NSTextAlignmentRight;
 }
+
 
 //弹出确认保存警告框
 -(void)showComfirm {
@@ -188,7 +194,7 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     [self.cash resignFirstResponder];
     
     KOMNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
-    KOMTimePickerViewController *memberVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MemberTable"];
+    KOMMemberTableViewController *memberVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MemberTable"];
     [nav pushViewController:memberVC animated:NO];
     
     memberVC.delegate = self;

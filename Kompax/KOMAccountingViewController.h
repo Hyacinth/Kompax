@@ -19,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIView *accView;
 
 @property (retain, nonatomic) IBOutlet UIButton *openButton;
-@property (retain, nonatomic) IBOutlet UITextField *inputTextField;
+@property (retain, nonatomic) IBOutlet UILabel *inputTextField;
 @property (retain, nonatomic) IBOutlet TableViewWithBlock *tb;
 - (IBAction)changeOpenStatus:(id)sender;
 

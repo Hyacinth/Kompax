@@ -86,11 +86,16 @@
     [self addChildViewController:debitVC];
     [self addChildViewController:imcomeVC];
     [self addChildViewController:costVC];
+    
+    //设置单击标签可弹出下拉菜单
+    [_inputTextField setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *tapForList = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeOpenStatus:)];
+    [_inputTextField addGestureRecognizer:tapForList];
+
 }
 
-
 - (IBAction)changeOpenStatus:(id)sender {
-    
+
     if (isOpened) {
         
         [UIView animateWithDuration:0.3 animations:^{
@@ -147,6 +152,8 @@
     //更新cost视图的cashbar数据显示
     KOMCostViewController *costVC = [self.childViewControllers objectAtIndex:3];
     [costVC calculateAndDraw];
+    KOMIncomeViewController *incomeVC = [self.childViewControllers objectAtIndex:2];
+    [incomeVC calculateAndDraw];
     
     [self.view endEditing:YES];
     if (isOpened) {

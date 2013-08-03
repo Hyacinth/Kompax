@@ -23,15 +23,15 @@
 		9322508817A993F40085B3D0 /* alertView_button_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322507D17A993F40085B3D0 /* alertView_button_cancel.png */; };
 		9322508917A993F40085B3D0 /* alertView_button_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322507E17A993F40085B3D0 /* alertView_button_cancel@2x.png */; };
 		9322508F17A9BFD40085B3D0 /* KOMIncomeCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322508E17A9BFD30085B3D0 /* KOMIncomeCategoryTableViewController.m */; };
+		9323A92017AABF970022974B /* KOMCircleDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323A91F17AABF970022974B /* KOMCircleDraw.m */; };
+		9323A92317AAEAA50022974B /* KOMDebitorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323A92217AAEAA50022974B /* KOMDebitorTableViewController.m */; };
+		9323A92617AAEAAF0022974B /* KOMCreditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9323A92517AAEAAF0022974B /* KOMCreditorTableViewController.m */; };
 		934A64541796476A00E28837 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64531796476A00E28837 /* UIKit.framework */; };
 		934A64561796476A00E28837 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64551796476A00E28837 /* Foundation.framework */; };
 		934A64581796476A00E28837 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934A64571796476A00E28837 /* CoreGraphics.framework */; };
 		934A645E1796476A00E28837 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 934A645C1796476A00E28837 /* InfoPlist.strings */; };
 		934A64601796476A00E28837 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A645F1796476A00E28837 /* main.m */; };
 		934A64641796476A00E28837 /* KOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A64631796476A00E28837 /* KOMAppDelegate.m */; };
-		934A64661796476A00E28837 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 934A64651796476A00E28837 /* Default.png */; };
-		934A64681796476A00E28837 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 934A64671796476A00E28837 /* Default@2x.png */; };
-		934A646A1796476A00E28837 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 934A64691796476A00E28837 /* Default-568h@2x.png */; };
 		934A646D1796476A00E28837 /* mainstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934A646B1796476A00E28837 /* mainstoryboard.storyboard */; };
 		934A64701796476A00E28837 /* KOMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 934A646F1796476A00E28837 /* KOMLoginViewController.m */; };
 		9366415717A76A6900DBA0E1 /* KOMCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */; };
@@ -220,6 +220,9 @@
 		939A665E179D191700F55B41 /* UITableView+DelegateBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A6658179D191700F55B41 /* UITableView+DelegateBlocks.m */; };
 		939A665F179D191700F55B41 /* TableViewWithBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A665A179D191700F55B41 /* TableViewWithBlock.m */; };
 		939E9DC4179904BC00C7307F /* KOMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939E9DC3179904BC00C7307F /* KOMRegisterViewController.m */; };
+		939F17B217AD34640076DFA4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 939F17B117AD34640076DFA4 /* Default.png */; };
+		939F17B417AD346C0076DFA4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 939F17B317AD346C0076DFA4 /* Default@2x.png */; };
+		939F17B617AD34710076DFA4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 939F17B517AD34710076DFA4 /* Default-568h@2x.png */; };
 		93AC95AA1798E808005E9E29 /* cb_glossy_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AC95911798E808005E9E29 /* cb_glossy_off.png */; };
 		93AC95AB1798E808005E9E29 /* cb_glossy_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AC95921798E808005E9E29 /* cb_glossy_off@2x.png */; };
 		93AC95AC1798E808005E9E29 /* cb_glossy_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AC95931798E808005E9E29 /* cb_glossy_on.png */; };
@@ -264,9 +267,12 @@
 		9322507E17A993F40085B3D0 /* alertView_button_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alertView_button_cancel@2x.png"; sourceTree = "<group>"; };
 		9322508D17A9BFD30085B3D0 /* KOMIncomeCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMIncomeCategoryTableViewController.h; sourceTree = "<group>"; };
 		9322508E17A9BFD30085B3D0 /* KOMIncomeCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMIncomeCategoryTableViewController.m; sourceTree = "<group>"; };
-		9322BA95179F7788006F08B8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9322BA97179F778E006F08B8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		9322BA99179F77DE006F08B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9323A91E17AABF970022974B /* KOMCircleDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMCircleDraw.h; sourceTree = "<group>"; };
+		9323A91F17AABF970022974B /* KOMCircleDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMCircleDraw.m; sourceTree = "<group>"; };
+		9323A92117AAEAA50022974B /* KOMDebitorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMDebitorTableViewController.h; sourceTree = "<group>"; };
+		9323A92217AAEAA50022974B /* KOMDebitorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMDebitorTableViewController.m; sourceTree = "<group>"; };
+		9323A92417AAEAAF0022974B /* KOMCreditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMCreditorTableViewController.h; sourceTree = "<group>"; };
+		9323A92517AAEAAF0022974B /* KOMCreditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMCreditorTableViewController.m; sourceTree = "<group>"; };
 		9331F3D417A927CE008FA3C5 /* KOMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMConstants.h; sourceTree = "<group>"; };
 		934A64501796476A00E28837 /* Kompax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kompax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934A64531796476A00E28837 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -493,6 +499,9 @@
 		939A665A179D191700F55B41 /* TableViewWithBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewWithBlock.m; sourceTree = "<group>"; };
 		939E9DC2179904BC00C7307F /* KOMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOMRegisterViewController.h; sourceTree = "<group>"; };
 		939E9DC3179904BC00C7307F /* KOMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOMRegisterViewController.m; sourceTree = "<group>"; };
+		939F17B117AD34640076DFA4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		939F17B317AD346C0076DFA4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		939F17B517AD34710076DFA4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93AC95911798E808005E9E29 /* cb_glossy_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_off.png; sourceTree = "<group>"; };
 		93AC95921798E808005E9E29 /* cb_glossy_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_glossy_off@2x.png"; sourceTree = "<group>"; };
 		93AC95931798E808005E9E29 /* cb_glossy_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_glossy_on.png; sourceTree = "<group>"; };
@@ -584,14 +593,25 @@
 			path = alertview;
 			sourceTree = "<group>";
 		};
+		9323A91D17AABEC50022974B /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				9366415817A7B33900DBA0E1 /* KOMBarDraw.h */,
+				9366415917A7B33900DBA0E1 /* KOMBarDraw.m */,
+				9323A91E17AABF970022974B /* KOMCircleDraw.h */,
+				9323A91F17AABF970022974B /* KOMCircleDraw.m */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
 		934A64471796476A00E28837 = {
 			isa = PBXGroup;
 			children = (
+				939F17B517AD34710076DFA4 /* Default-568h@2x.png */,
+				939F17B317AD346C0076DFA4 /* Default@2x.png */,
+				939F17B117AD34640076DFA4 /* Default.png */,
 				9322505D17A976E90085B3D0 /* 图标@2x.png */,
 				9322505B17A976E20085B3D0 /* 图标.png */,
-				9322BA99179F77DE006F08B8 /* Default-568h@2x.png */,
-				9322BA97179F778E006F08B8 /* Default.png */,
-				9322BA95179F7788006F08B8 /* Default@2x.png */,
 				939912DF1797BC33003E8AC2 /* QuartzCore.framework */,
 				934A64591796476A00E28837 /* Kompax */,
 				934A64521796476A00E28837 /* Frameworks */,
@@ -620,6 +640,7 @@
 		934A64591796476A00E28837 /* Kompax */ = {
 			isa = PBXGroup;
 			children = (
+				9323A91D17AABEC50022974B /* Drawing */,
 				93B3782D17A3C777003541D7 /* UserInfo */,
 				93B3782017A370D7003541D7 /* Accounting */,
 				939E9DC817992D2600C7307F /* Ancillary File */,
@@ -1051,8 +1072,6 @@
 				93B3782817A372D2003541D7 /* KOMDebitViewController.m */,
 				93B3782A17A372D9003541D7 /* KOMCreditViewController.h */,
 				93B3782B17A372D9003541D7 /* KOMCreditViewController.m */,
-				9366415817A7B33900DBA0E1 /* KOMBarDraw.h */,
-				9366415917A7B33900DBA0E1 /* KOMBarDraw.m */,
 			);
 			name = Accounting;
 			sourceTree = "<group>";
@@ -1072,6 +1091,10 @@
 				9366415617A76A6900DBA0E1 /* KOMCategoryTableViewController.m */,
 				9322508D17A9BFD30085B3D0 /* KOMIncomeCategoryTableViewController.h */,
 				9322508E17A9BFD30085B3D0 /* KOMIncomeCategoryTableViewController.m */,
+				9323A92117AAEAA50022974B /* KOMDebitorTableViewController.h */,
+				9323A92217AAEAA50022974B /* KOMDebitorTableViewController.m */,
+				9323A92417AAEAAF0022974B /* KOMCreditorTableViewController.h */,
+				9323A92517AAEAAF0022974B /* KOMCreditorTableViewController.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -1129,9 +1152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				934A645E1796476A00E28837 /* InfoPlist.strings in Resources */,
-				934A64661796476A00E28837 /* Default.png in Resources */,
-				934A64681796476A00E28837 /* Default@2x.png in Resources */,
-				934A646A1796476A00E28837 /* Default-568h@2x.png in Resources */,
 				934A646D1796476A00E28837 /* mainstoryboard.storyboard in Resources */,
 				93AC95AA1798E808005E9E29 /* cb_glossy_off.png in Resources */,
 				93AC95AB1798E808005E9E29 /* cb_glossy_off@2x.png in Resources */,
@@ -1315,6 +1335,9 @@
 				9322508717A993F40085B3D0 /* alertView_button_confirm@2x.png in Resources */,
 				9322508817A993F40085B3D0 /* alertView_button_cancel.png in Resources */,
 				9322508917A993F40085B3D0 /* alertView_button_cancel@2x.png in Resources */,
+				939F17B217AD34640076DFA4 /* Default.png in Resources */,
+				939F17B417AD346C0076DFA4 /* Default@2x.png in Resources */,
+				939F17B617AD34710076DFA4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1390,9 @@
 				9322507517A98DEB0085B3D0 /* XYAlertViewManager.m in Sources */,
 				9322507617A98DEB0085B3D0 /* XYLoadingView.m in Sources */,
 				9322508F17A9BFD40085B3D0 /* KOMIncomeCategoryTableViewController.m in Sources */,
+				9323A92017AABF970022974B /* KOMCircleDraw.m in Sources */,
+				9323A92317AAEAA50022974B /* KOMDebitorTableViewController.m in Sources */,
+				9323A92617AAEAAF0022974B /* KOMCreditorTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

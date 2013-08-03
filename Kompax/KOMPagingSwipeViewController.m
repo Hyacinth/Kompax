@@ -145,7 +145,13 @@ static NSUInteger kNumberOfPages = 3;
         [costVC.cash resignFirstResponder];
     }
     if (currentPage == 1) {
-//        NSLog(@"mainPage");
+        KOMMainPageViewController *mainVC = [_viewControllers objectAtIndex:1];
+        double cost = mainVC.totalCost;
+        double earn = mainVC.totalEarn;
+        double dif = earn - cost;   //收支差额
+        
+        
+        
     }
 }
 

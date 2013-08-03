@@ -10,4 +10,7 @@
 
 @interface KOMMainPageViewController : UIViewController<UIGestureRecognizerDelegate>
 
+@property(assign,nonatomic) double totalCost;
+@property(assign,nonatomic) double totalEarn;
+
 @end

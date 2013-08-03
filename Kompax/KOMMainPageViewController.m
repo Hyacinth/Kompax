@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _totalCost = 20930;
+    _totalEarn = 13098;
 }
 
 - (void)didReceiveMemoryWarning

@@ -179,9 +179,6 @@
             [smallText drawInRect:smallTextRect withFont:font lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentRight];
             CGContextStrokePath(context);//执行描画动作
         }
-
-        
-        
     }   //超支或者超挣
 }
 
