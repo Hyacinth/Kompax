@@ -32,8 +32,20 @@ static NSUInteger kNumberOfPages = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //观察通知，设置自己的scrollview是否可以滚动
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageSwipeUnable) name:@"pageSwipeUnable" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageSwipeAble) name:@"pageSwipeAble" object:nil];
+}
 
-	// Do any additional setup after loading the view.
+//使scrollview无法滚动
+-(void)pageSwipeUnable {
+    [_scrollView setScrollEnabled:NO];
+}
+
+//使scrollview可以滚动
+-(void)pageSwipeAble {
+    [_scrollView setScrollEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +67,7 @@ static NSUInteger kNumberOfPages = 3;
     self.viewControllers = controllers;
     
     //创建scrollview
-    _scrollView = [[UIScrollView  alloc]initWithFrame:CGRectMake(0, 20, 320, 411)];
+    _scrollView = [[UIScrollView  alloc]initWithFrame:CGRectMake(0, 0, 320, 431)];
     [self.view addSubview:_scrollView];
    [_scrollView setUserInteractionEnabled:YES];
     
@@ -66,7 +78,8 @@ static NSUInteger kNumberOfPages = 3;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
     _scrollView.delegate = self;
-    currentPage = 1;
+    currentPage = 1;        //当前页是第1页
+    lastPage = 0;           //上一页是第0页
     
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
@@ -127,16 +140,20 @@ static NSUInteger kNumberOfPages = 3;
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    lastPage = currentPage;     //将当前页复制给上一页
+    
     CGFloat pageWidth = _scrollView.frame.size.width;
     int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     currentPage = page;
     
     if (currentPage==2)
     {
-        KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
-        KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
-        [costVC.cash becomeFirstResponder];
-        [costVC.cash selectAll:self];
+        if(lastPage != 2) {
+            KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
+            KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
+            [costVC.cash becomeFirstResponder];
+            [costVC.cash selectAll:self];
+        }
     }
     else
     {

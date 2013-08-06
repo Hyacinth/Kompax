@@ -74,8 +74,9 @@
     _controllers = @[costVC,imcomeVC,debitVC,creditVC];
     currentVC = costVC;
     
-    //添加子视图
     [self.view sendSubviewToBack:_accView];
+    
+    //添加子视图
     [_accView addSubview:creditVC.view];
     [_accView addSubview:debitVC.view];
     [_accView addSubview:imcomeVC.view];

@@ -6,11 +6,14 @@
 //  Copyright (c) 2013年 Bryan. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "KOMDebitViewController.h"
 #import "KOMAccountingViewController.h"
 #import "KOMNavViewController.h"
 #import "KOMConstants.h"
 #import "XYAlertViewHeader.h"
+
+
 
 static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
 
@@ -39,7 +42,7 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     [formatter setTimeZone:localzone];
     _timeLabel.text = [formatter stringFromDate:[NSDate date]];
     
-    _categoryLabel.text = @"餐饮 > 早餐";
+    _categoryLabel.text = @"选择还款类别";
     
     _accountLabel.text = @"现金"; //初始化账户
     _creditorLabel.text = @"阿翔";  //初始化成员
@@ -113,6 +116,9 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     }
 }
 
+
+
+
 //显示账户选项
 -(void)presentAcc {
     
@@ -162,19 +168,28 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+//显示还款类别界面
 -(void)presentCategory {
     
     //切换页面时先去掉cash输入框的第一反应资格
     [self.cash resignFirstResponder];
     
-    KOMNavViewController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"AccNav"];
-    KOMCategoryTableViewController *categoryVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Category"];
-    [nav pushViewController:categoryVC animated:NO];
+    _repayVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Repayment"];
     
-    categoryVC.delegate = self;
+    _repayVC.view.frame = CGRectMake(0, 0, 320, 480);
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = UIViewAnimationCurveEaseInOut;
+    transition.type = kCATransitionFade;
+    transition.subtype = kCAGravityTopRight;
+    [[self.view layer] addAnimation:transition forKey:@"transision"];
+    [self.view addSubview:_repayVC.view];
+    [self addChildViewController:_repayVC];
     
-    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:nav animated:YES completion:nil];
+    //当前金额不为0时，直接传入还款界面中
+    if ([_cash.text doubleValue] != 0) {
+        _repayVC.cashText.text = _cash.text;
+    }
 }
 
 

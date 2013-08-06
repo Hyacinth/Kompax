@@ -12,6 +12,7 @@
 #import "KOMMemberTableViewController.h"
 #import "KOMCreditorTableViewController.h"
 #import "KOMCategoryTableViewController.h"
+#import "KOMRepaymentViewController.h"
 
 @interface KOMDebitViewController : UIViewController<KOMAccountTableViewDelegate,KOMTimePickerDelegate,KOMCreditorTableViewDelegate,KOMCategoryTableViewDelegate>
 
@@ -23,5 +24,8 @@
 @property (strong,nonatomic) IBOutlet UILabel *creditorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 
+@property(strong,nonatomic) KOMRepaymentViewController *repayVC;      //还款界面控制器
+
+- (IBAction)bgTap:(id)sender;
 
 @end
