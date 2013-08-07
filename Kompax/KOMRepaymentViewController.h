@@ -29,5 +29,22 @@
 @property (strong, nonatomic) IBOutlet UITextField *repayYearsText;
 @property (strong, nonatomic) IBOutlet UITextField *firstBorrowTimeText;
 
+//选中类别标签下面的横线
+@property (strong,nonatomic) UILabel *bar;
+
+//还款类别数组
+@property (strong,nonatomic) NSArray *repaymentCategoryArray;
+
+//还款频率数组
+@property (strong,nonatomic) NSArray *frequencyArray;
+
+
+@property(assign,nonatomic) unsigned int selectedCategory;  //选中的类别
+@property(assign,nonatomic) unsigned int selectedFrequency; //选中的频率
+
+//还款频率标签
+@property (strong, nonatomic) IBOutlet UILabel *freLabel;
+//初始借款时间标签
+@property (strong, nonatomic) IBOutlet UILabel *firstLabel;
 
 @end

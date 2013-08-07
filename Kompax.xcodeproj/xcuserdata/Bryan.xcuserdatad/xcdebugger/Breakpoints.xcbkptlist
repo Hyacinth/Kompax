@@ -474,11 +474,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMRepaymentViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397553068.927975"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kompax/KOMRepaymentViewController.m"
+         timestampString = "397562093.802547"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
+         landmarkName = "-changeCategory:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kompax/KOMRepaymentViewController.m"
+         timestampString = "397562093.802547"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
