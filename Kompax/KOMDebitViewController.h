@@ -23,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong,nonatomic) IBOutlet UILabel *creditorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
-
+@property(assign,nonatomic) int category;                             //还款类别tag
 @property(strong,nonatomic) KOMRepaymentViewController *repayVC;      //还款界面控制器
 
 - (IBAction)bgTap:(id)sender;

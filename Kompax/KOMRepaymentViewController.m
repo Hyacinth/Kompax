@@ -30,10 +30,27 @@
     [super viewDidAppear:animated];
     _scrollView.contentSize = CGSizeMake(320, 960);
     _scrollView.scrollEnabled = NO; //无法滚动
-
+    
+    KOMDebitViewController *father = (KOMDebitViewController *)self.parentViewController;
+    _selectedCategory = father.category;
+    _bar.frame =  CGRectMake(27+(_selectedCategory-1)*95, 80, 78, 2);
+    
+    //初始化选中类别标签和下面的横线
+    UIColor *selectedColor = [UIColor colorWithRed:124/255.0 green:165/255.0 blue:189/255.0 alpha:1.0];
+    UIColor *unSelectedColor = [UIColor blackColor];
+    
+    for(int i = 0;i<3;i++) {
+        UILabel *temp = [_repaymentCategoryArray objectAtIndex:i];
+        if (i == _selectedCategory -1 ) {
+            temp.textColor = selectedColor;
+        }
+        else {
+            temp.textColor = unSelectedColor;
+        }
+    }
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"pageSwipeUnable" object:nil];
 }
-
 
 - (void)viewDidLoad
 {
@@ -50,7 +67,7 @@
     
     //向右滑直接确定返回借记界面
     UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(confirm)];
-    [rightSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
     [_scrollView addGestureRecognizer:rightSwipe];
     
     //将3种还款类别放入还款数组中
@@ -83,19 +100,18 @@
         [tempLabel addGestureRecognizer:tap];
         [tempLabel setUserInteractionEnabled: YES];
     }
-
-    //初始化选中类别标签和下面的横线
-    UIColor *selectedColor = [UIColor colorWithRed:124/255.0 green:165/255.0 blue:189/255.0 alpha:1.0];
-    _category_1.textColor = selectedColor;
+    _selectedCategory = 1;  //选中第一类别
+    _selectedFrequency = 1; //选中第一频率
     
-    _bar = [[UILabel alloc]initWithFrame:CGRectMake(27, 80, 78, 2)];
+    //初始化bar
+    UIColor *selectedColor = [UIColor colorWithRed:124/255.0 green:165/255.0 blue:189/255.0 alpha:1.0];
+    _bar = [[UILabel alloc]initWithFrame:CGRectMake(27+(_selectedCategory-1)*95, 80, 78, 2)];
     _bar.backgroundColor  = selectedColor;
     [self.view addSubview:_bar];
-    _selectedCategory = 1;          //当前选中第一种类别
     
     //初始化选中频率标签
     _monthLabel.textColor = [UIColor blackColor];
-    _selectedFrequency = 1;
+ 
 }
 
 - (void)bgTap {
@@ -188,15 +204,19 @@
     
     //将还款界面的金额传至外界面
     KOMDebitViewController *father = (KOMDebitViewController *)self.parentViewController;
+    father.category = _selectedCategory;
     
     //判断用户输入是否为空
     if (_cashText.text.length != 0) {
         father.cash.text = _cashText.text;
     }
     
+    //将还款界面的类别传至外界面
+    UILabel *selected = (UILabel *)[self.view viewWithTag:_selectedCategory];
+    father.categoryLabel.text = selected.text;
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"pageSwipeAble" object:nil];
     [self.view removeFromSuperview];
-    [self removeFromParentViewController];
 }
 
 
@@ -204,7 +224,7 @@
 -(void)goBack {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"pageSwipeAble" object:nil];
     [self.view removeFromSuperview];
-    [self removeFromParentViewController];
+
 }
 
 - (void)didReceiveMemoryWarning

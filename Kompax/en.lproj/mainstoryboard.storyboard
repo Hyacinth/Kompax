@@ -84,13 +84,13 @@
                             <constraint firstItem="XGE-hk-Cbl" firstAttribute="bottom" secondItem="v4u-B3-Ll8" secondAttribute="bottom" type="default" id="H8p-0o-FBN"/>
                             <constraint firstItem="zGV-JB-rL4" firstAttribute="centerX" secondItem="Bgs-nJ-L4l" secondAttribute="centerX" type="default" id="NLW-45-pkZ"/>
                             <constraint firstItem="v4u-B3-Ll8" firstAttribute="top" secondItem="XGE-hk-Cbl" secondAttribute="top" type="default" id="NeM-Ud-zrd"/>
-                            <constraint firstItem="DUX-ic-sbP" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="38" id="OCD-5D-4XY"/>
+                            <constraint firstItem="DUX-ic-sbP" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="58" id="OB3-vb-Y5O"/>
                             <constraint firstItem="v4u-B3-Ll8" firstAttribute="trailing" secondItem="DUX-ic-sbP" secondAttribute="trailing" type="default" id="S4B-OX-Q93"/>
-                            <constraint firstItem="zGV-JB-rL4" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="49" id="WLq-RH-T8d"/>
-                            <constraint firstItem="hIC-Ih-hTK" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="30" id="aZ7-Qm-jpX"/>
+                            <constraint firstItem="hIC-Ih-hTK" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="50" id="Tqh-Sd-Yu0"/>
                             <constraint firstItem="XGE-hk-Cbl" firstAttribute="centerX" secondItem="hIC-Ih-hTK" secondAttribute="centerX" type="default" id="dLJ-tP-a2C"/>
                             <constraint firstAttribute="trailing" secondItem="XGE-hk-Cbl" secondAttribute="trailing" constant="52" id="ixs-Ne-4Th"/>
                             <constraint firstItem="v4u-B3-Ll8" firstAttribute="leading" secondItem="Bgs-nJ-L4l" secondAttribute="leading" constant="52" id="khn-wg-dae"/>
+                            <constraint firstItem="zGV-JB-rL4" firstAttribute="top" secondItem="Bgs-nJ-L4l" secondAttribute="top" constant="69" id="lib-7Z-co2"/>
                             <constraint firstItem="XGE-hk-Cbl" firstAttribute="top" secondItem="hIC-Ih-hTK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pJG-bU-vhW"/>
                         </constraints>
                     </view>

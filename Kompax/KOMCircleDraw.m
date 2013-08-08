@@ -10,8 +10,12 @@
 
 @implementation KOMCircleDraw
 
-static double kSmallestRadius = 70/2;
-static double kLargestRadius = 230/2;
+static double kSmallestRadius = 60;
+static double kLargestRadius = 115;
+
+static double kCostCircleY = 250;       //支出圆圆心Y坐标
+static double kEarnCircleY = 264;       //收入圆圆心Y坐标
+static double kFontSize = 15;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,9 +27,15 @@ static double kLargestRadius = 230/2;
 }
 
 - (void)drawRect:(CGRect)rect
-    {
-    _totalEarn = 3000;
-    _totalCost = 1689;
+{
+    _totalEarn = 300000000;
+    _totalCost = 10000000;
+    
+    //初始化常量字符串
+    _costStateLabel = [NSString stringWithFormat:@"本月支出"];
+    _earnStateLabel = [NSString stringWithFormat:@"本月收入"];
+    _difStateLabel= [NSString stringWithFormat:@"收支差额"];
+    
     double larger,smaller,absDif,costRadius,earnRadius;
     double movement = 0;        //差额圆偏移量
 
@@ -40,8 +50,8 @@ static double kLargestRadius = 230/2;
         }
         else {
             double smallest = larger/3;  //设立最小边界
-            costRadius = kSmallestRadius * smaller / smallest;
-            earnRadius = kSmallestRadius * larger / smallest;
+            costRadius = (kSmallestRadius-20) * smaller / smallest;
+            earnRadius = (kSmallestRadius-20) * larger / smallest;
         }
         
     }   //收入大于支出
@@ -57,8 +67,8 @@ static double kLargestRadius = 230/2;
         }
         else {
             double smallest = larger/3;  //设立最小边界
-            earnRadius = kSmallestRadius * smaller / smallest;
-            costRadius = kSmallestRadius * larger / smallest;
+            earnRadius = (kSmallestRadius-20) * smaller / smallest;
+            costRadius = (kSmallestRadius-20) * larger / smallest;
         }
     }   //支出大于收入
 
@@ -67,56 +77,94 @@ static double kLargestRadius = 230/2;
     else
         absDif = 30;
 
-    NSLog(@"earn:%f,cost:%f,abs:%f",earnRadius,costRadius,absDif);
-
     /*画图*/
     //设置字体
-    UIFont *costNumberFont = [UIFont boldSystemFontOfSize:9.5+costRadius/7-4];
-    UIFont *earnNumberFont= [UIFont boldSystemFontOfSize:9.5+earnRadius/7-4];
-    UIFont *difNumberFont= [UIFont boldSystemFontOfSize:9.5+absDif/7-4];
+    UIFont *costNumberFont = [UIFont boldSystemFontOfSize:9.5+costRadius/7];
+    UIFont *earnNumberFont= [UIFont boldSystemFontOfSize:9.5+earnRadius/7];
+    UIFont *difNumberFont= [UIFont boldSystemFontOfSize:9.5+absDif/7];
 
     CGContextRef context=UIGraphicsGetCurrentContext();
 
-    //画支出半圆并写字
+    //画支出半圆并写字--------------------------------------------------------------------------------------
     CGContextSetFillColorWithColor(context, [UIColor colorWithRed:248/255.0 green:149/255.0 blue:64/255.0 alpha:1.0].CGColor);//填充颜色
-    CGContextFillEllipseInRect(context,CGRectMake(320-costRadius,405/2-costRadius,2*costRadius, 2*costRadius));
+    CGContextFillEllipseInRect(context,CGRectMake(320-costRadius,kCostCircleY-costRadius,2*costRadius, 2*costRadius));
+    
     //写字
-    NSString *costLabel = [NSString stringWithFormat:@"%.2f",_totalCost];
-    CGPoint costDrawPoint = CGPointMake(320-costRadius+costRadius/5-4, 405/2-10);
-
+    NSString *costLabel  = [self conversion:_totalCost];
+    CGRect costDrawRect = CGRectMake(320-costRadius, kCostCircleY-kFontSize/2, costRadius , kFontSize);
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);//填充颜色
-    [costLabel drawAtPoint:costDrawPoint forWidth:150 withFont:costNumberFont lineBreakMode:NSLineBreakByCharWrapping];
+    [costLabel drawInRect:costDrawRect withFont:costNumberFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+    
 
 
-    //画收入半圆
+    //画收入半圆-------------------------------------------------------------------------------------------
     CGContextSetFillColorWithColor(context, [UIColor colorWithRed:105/255.0 green:167/255.0 blue:203/255.0 alpha:1.0].CGColor);//设置线的颜色
-    CGContextFillEllipseInRect(context,CGRectMake(-earnRadius,528/2-earnRadius,2*earnRadius, 2*earnRadius));
+    CGContextFillEllipseInRect(context,CGRectMake(-earnRadius,kEarnCircleY-earnRadius,2*earnRadius, 2*earnRadius));
+    
     //写字
-    NSString *earnLabel = [NSString stringWithFormat:@"%.2f",_totalEarn];
-    CGPoint earnDrawPoint = CGPointMake(earnRadius/5-4, 528/2-10);
-
+    NSString *earnLabel  = [self conversion:_totalEarn];
+    CGRect earnDrawRect = CGRectMake(0, kEarnCircleY-kFontSize/2, earnRadius, kFontSize);
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);//填充颜色
-    [earnLabel drawAtPoint:earnDrawPoint forWidth:150 withFont:earnNumberFont lineBreakMode:NSLineBreakByCharWrapping];
+    [earnLabel drawInRect:earnDrawRect withFont:earnNumberFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
 
     if (_isLargerEarn) {
         movement = 0;
     }
     else {
-        movement = -100;
+        movement = -70;
     }
 
-    //画差额圆
-    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:128/255.0 green:135/255.0 blue:147/255.0 alpha:1.0].CGColor);//设置线的颜色
-    CGContextFillEllipseInRect(context,CGRectMake(300/2+movement,450/2,2*absDif, 2*absDif));
+    //画差额圆---------------------------------------------------------------------------------------------
+    if (_isLargerEarn) {
+        CGContextSetFillColorWithColor(context, [UIColor colorWithRed:84/255.0 green:152/255.0 blue:69/255.0 alpha:1.0].CGColor);//盈余填充颜色：绿色
+    }
+    else {
+        CGContextSetFillColorWithColor(context, [UIColor colorWithRed:128/255.0 green:135/255.0 blue:147/255.0 alpha:1.0].CGColor);//亏损填充颜色: 灰色
+    }
+    CGContextFillEllipseInRect(context,CGRectMake(145+movement,280,2*absDif, 2*absDif));
     //写字
-    NSString *difLabel = [NSString stringWithFormat:@"%.2f",fabs(_totalEarn-_totalCost)];
-    CGPoint difDrawPoint = CGPointMake(300/2+absDif+movement, 450/2+absDif-10);
-
+    NSString *difLabel = [self conversion:fabs(_totalEarn-_totalCost)];
+    CGRect difLabelRect = CGRectMake(145+movement+3, 280+absDif-kFontSize/2, 2*absDif-kFontSize/2, kFontSize);
+    
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);//填充颜色
-    [difLabel drawAtPoint:difDrawPoint forWidth:150 withFont:difNumberFont lineBreakMode:NSLineBreakByCharWrapping];
+    [difLabel drawInRect:difLabelRect withFont:difNumberFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+    
+    //写常量字符串-------------------------------------------------------------------------------------------
+    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:171/255.0 green:175/255.0 blue:183/255.0 alpha:1.0].CGColor);//灰色
+    UIFont *stateFont = [UIFont boldSystemFontOfSize:kFontSize];
+    CGRect costStateRect = CGRectMake(320-costRadius*4/5-85, kCostCircleY-costRadius*3/5, 80, 12);
+    CGRect earnStateRect = CGRectMake(earnRadius*0.8, kEarnCircleY-earnRadius*3/5, 80, 12);
+    CGRect difStateRect = CGRectMake(75 + movement, 280+absDif*1.25, 80, 12);
+    [_costStateLabel drawInRect:costStateRect withFont:stateFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+    [_earnStateLabel drawInRect:earnStateRect withFont:stateFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
+    [_difStateLabel drawInRect:difStateRect withFont:stateFont lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
 
     CGContextStrokePath(context);//把线在界面上绘制出来
-    }
+}
 
+//换算
+-(NSString *)conversion:(double)num {
+    
+    //大于1兆的，直接以“兆”做单位，小数点后精确两位
+    if (num > 1000000000000) {
+        double temp = round(num/10000000000)/100;
+        NSString *res = [NSString stringWithFormat:@"%2.f兆",temp];
+        return res;
+    }
+    //大于1亿的，直接以“亿”做单位，小数点后精确两位    
+    if (num > 100000000) {
+        double temp = round(num/1000000)/100;
+        NSString *res = [NSString stringWithFormat:@"%2.f亿",temp];
+        return res;
+    }
+    //大于1万的，直接以“万”做单位，小数点后精确两位
+    else if (num > 10000) {
+        
+        double temp = round(num/100)/100;
+        NSString *res = [NSString stringWithFormat:@"%2.f万",temp];
+        return res;
+    }
+    return  [NSString stringWithFormat:@"%.2f",num];
+}
 
 @end

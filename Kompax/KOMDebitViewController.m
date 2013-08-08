@@ -42,7 +42,8 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     [formatter setTimeZone:localzone];
     _timeLabel.text = [formatter stringFromDate:[NSDate date]];
     
-    _categoryLabel.text = @"选择还款类别";
+    _category = 1;
+    _categoryLabel.text = @"等额分期偿还";
     
     _accountLabel.text = @"现金"; //初始化账户
     _creditorLabel.text = @"阿翔";  //初始化成员
@@ -56,6 +57,12 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     _cash.font = [UIFont fontWithName:@"Helvetica" size:40];
     _cash.textColor = [UIColor colorWithRed:239/255.0 green:100/255.0 blue:79/255.0 alpha:1.0];
     _cash.textAlignment = NSTextAlignmentRight;
+    
+    
+    //初始化类别选择界面
+    _repayVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Repayment"];
+    _repayVC.view.frame = CGRectMake(0, 0, 320, 480);
+    [self addChildViewController:_repayVC];  
 }
 
 //弹出确认保存警告框
@@ -174,9 +181,6 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     //切换页面时先去掉cash输入框的第一反应资格
     [self.cash resignFirstResponder];
     
-    _repayVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Repayment"];
-    
-    _repayVC.view.frame = CGRectMake(0, 0, 320, 480);
     CATransition *transition = [CATransition animation];
     transition.duration = 0.5;
     transition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -184,7 +188,6 @@ static NSString *GLOBAL_TIMEFORMAT = @"yyyy-MM-dd HH:mm:ss";
     transition.subtype = kCAGravityTopRight;
     [[self.view layer] addAnimation:transition forKey:@"transision"];
     [self.view addSubview:_repayVC.view];
-    [self addChildViewController:_repayVC];
     
     //当前金额不为0时，直接传入还款界面中
     if ([_cash.text doubleValue] != 0) {

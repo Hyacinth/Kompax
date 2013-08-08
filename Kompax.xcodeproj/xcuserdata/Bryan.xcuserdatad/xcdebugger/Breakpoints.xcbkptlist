@@ -201,11 +201,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
+         startingLineNumber = "153"
+         endingLineNumber = "153"
          landmarkName = "-presentTimePicker"
          landmarkType = "5">
       </FileBreakpoint>
@@ -214,11 +214,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-presentCreditor"
          landmarkType = "5">
       </FileBreakpoint>
@@ -253,11 +253,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-viewDidAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -266,11 +266,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
          landmarkName = "-bgTap:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -279,11 +279,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
          landmarkName = "@implementation KOMDebitViewController"
          landmarkType = "3">
       </FileBreakpoint>
@@ -318,11 +318,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -331,11 +331,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-showComfirm"
          landmarkType = "5">
       </FileBreakpoint>
@@ -344,11 +344,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
          landmarkName = "-bgTap:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -357,11 +357,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-presentCreditor"
          landmarkType = "5">
       </FileBreakpoint>
@@ -370,11 +370,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
          landmarkName = "-presentTimePicker"
          landmarkType = "5">
       </FileBreakpoint>
@@ -383,11 +383,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "141"
+         endingLineNumber = "141"
          landmarkName = "-presentAcc"
          landmarkType = "5">
       </FileBreakpoint>
@@ -396,11 +396,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397455484.636723"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
          landmarkName = "-presentCategory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -409,11 +409,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "198"
-         endingLineNumber = "198"
+         startingLineNumber = "201"
+         endingLineNumber = "201"
          landmarkName = "-changeAccount:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -422,11 +422,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "205"
+         endingLineNumber = "205"
          landmarkName = "-changeTimeText:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -435,11 +435,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
          landmarkName = "-changeCreditor:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -448,11 +448,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "213"
-         endingLineNumber = "213"
+         startingLineNumber = "216"
+         endingLineNumber = "216"
          landmarkName = "-changeCategory:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -461,11 +461,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMDebitViewController.m"
-         timestampString = "397467572.436566"
+         timestampString = "397582686.665499"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
          landmarkName = "-didReceiveMemoryWarning"
          landmarkType = "5">
       </FileBreakpoint>
@@ -474,11 +474,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMRepaymentViewController.m"
-         timestampString = "397553068.927975"
+         timestampString = "397589945.791803"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -487,11 +487,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMRepaymentViewController.m"
-         timestampString = "397562093.802547"
+         timestampString = "397589945.791803"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
          landmarkName = "-changeCategory:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -500,12 +500,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kompax/KOMRepaymentViewController.m"
-         timestampString = "397562093.802547"
+         timestampString = "397589945.791803"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kompax/KOMRepaymentViewController.m"
+         timestampString = "397584120.740653"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "-viewDidAppear:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kompax/KOMCircleDraw.m"
+         timestampString = "397655033.775829"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "162"
+         endingLineNumber = "162"
+         landmarkName = "-conversion:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
