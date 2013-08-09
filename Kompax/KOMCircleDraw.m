@@ -28,47 +28,47 @@ static double kFontSize = 15;
 
 - (void)drawRect:(CGRect)rect
 {
-    _totalEarn = 300000000;
-    _totalCost = 10000000;
+    _totalEarn = 1000;
+    _totalCost = 1000;
     
     //初始化常量字符串
     _costStateLabel = [NSString stringWithFormat:@"本月支出"];
     _earnStateLabel = [NSString stringWithFormat:@"本月收入"];
     _difStateLabel= [NSString stringWithFormat:@"收支差额"];
     
-    double larger,smaller,absDif,costRadius,earnRadius;
+    double absDif,costRadius,earnRadius;
     double movement = 0;        //差额圆偏移量
-
-    if (_totalEarn >= _totalCost ) {
+    
+    if(_totalCost == _totalEarn) {
         _isLargerEarn = YES;
-        larger = _totalEarn;
-        smaller = _totalCost;
-        
-        if (larger/3 >= smaller) {
+        earnRadius = kSmallestRadius+20;
+        costRadius = kSmallestRadius+20;
+    }
+    else if (_totalEarn > _totalCost ) {
+        _isLargerEarn = YES;
+
+        if (_totalEarn/3 >= _totalCost) {
             earnRadius = kLargestRadius;
             costRadius = kSmallestRadius;
         }
         else {
-            double smallest = larger/3;  //设立最小边界
-            costRadius = (kSmallestRadius-20) * smaller / smallest;
-            earnRadius = (kSmallestRadius-20) * larger / smallest;
+            double smallest = _totalEarn/3;  //设立最小边界
+            costRadius = (kSmallestRadius-20) * _totalCost / smallest;
+            earnRadius = (kSmallestRadius-20) * _totalEarn / smallest;
         }
         
     }   //收入大于支出
     else {
         _isLargerEarn = NO;
-        larger = _totalCost;
-        smaller = _totalEarn;
         
-        
-        if (larger/3 >= smaller) {
+        if (_totalCost/3 >= _totalEarn) {
             costRadius = kLargestRadius;
             earnRadius = kSmallestRadius;
         }
         else {
-            double smallest = larger/3;  //设立最小边界
-            earnRadius = (kSmallestRadius-20) * smaller / smallest;
-            costRadius = (kSmallestRadius-20) * larger / smallest;
+            double smallest = _totalCost/3;  //设立最小边界
+            earnRadius = (kSmallestRadius-20) * _totalEarn / smallest;
+            costRadius = (kSmallestRadius-20) * _totalCost / smallest;
         }
     }   //支出大于收入
 

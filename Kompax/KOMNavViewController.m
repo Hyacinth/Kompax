@@ -23,19 +23,12 @@
     return self;
 }
 
-
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
 	// Do any additional setup after loading the view.
-}
-
--(IBAction)backToTabbar:(id)sender {
-    NSLog(@"222");
 }
 
 - (void)didReceiveMemoryWarning

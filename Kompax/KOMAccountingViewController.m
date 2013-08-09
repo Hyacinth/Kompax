@@ -11,11 +11,6 @@
 #import "SelectionCell.h"
 #import "TableViewWithBlock.h"
 
-#import "KOMCostViewController.h"
-#import "KOMIncomeViewController.h"
-#import "KOMDebitViewController.h"
-#import "KOMCreditViewController.h"
-
 @interface KOMAccountingViewController ()
 
 @end
@@ -72,7 +67,7 @@
     KOMCreditViewController *creditVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Credit"];
     
     _controllers = @[costVC,imcomeVC,debitVC,creditVC];
-    currentVC = costVC;
+    _currentVC = costVC;
     
     [self.view sendSubviewToBack:_accView];
     
@@ -111,6 +106,7 @@
             //切换子视图
             UIViewController *vc = [_controllers objectAtIndex:_tb.indexPathForSelectedRow.row];
             [self.accView bringSubviewToFront:vc.view];
+            _currentVC = vc;
             
             //更改输入框的颜色
             if (_tb.indexPathForSelectedRow.row % 2 == 0) {

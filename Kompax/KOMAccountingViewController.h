@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "UITableView+DataSourceBlocks.h"
 
+#import "KOMCostViewController.h"
+#import "KOMIncomeViewController.h"
+#import "KOMDebitViewController.h"
+#import "KOMCreditViewController.h"
+
 @class TableViewWithBlock;
 @interface KOMAccountingViewController : UIViewController{
-    
-    UIViewController *currentVC;
     BOOL isOpened;
 }
+@property (strong,nonatomic) UIViewController *currentVC;
 
 @property (strong, nonatomic) IBOutlet UIView *accView;
 

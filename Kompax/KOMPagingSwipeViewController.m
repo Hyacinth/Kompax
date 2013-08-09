@@ -9,7 +9,6 @@
 #import "KOMPagingSwipeViewController.h"
 #import "KOMAccountingViewController.h"
 #import "KOMMainPageViewController.h"
-#import "KOMCostViewController.h"
 
 static NSUInteger kNumberOfPages = 3;
 
@@ -80,6 +79,7 @@ static NSUInteger kNumberOfPages = 3;
     _scrollView.delegate = self;
     currentPage = 1;        //当前页是第1页
     lastPage = 0;           //上一页是第0页
+    currentAccountPage = 3; //当前为记账页
     
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
@@ -106,8 +106,9 @@ static NSUInteger kNumberOfPages = 3;
         case 0:
         {
             vc = [[UIViewController alloc]init];
-            UILabel *label= [[UILabel alloc]initWithFrame:CGRectMake(50, 50, 300, 20)];
-            label.text = @"asd";
+            UILabel *label= [[UILabel alloc]initWithFrame:CGRectMake(20, 160, 280, 30)];
+            label.text = @"拍照记账功能尚未实现，敬请期待！";
+            label.textAlignment = NSTextAlignmentCenter;
             [vc.view addSubview:label];
             break;
         }
@@ -150,16 +151,34 @@ static NSUInteger kNumberOfPages = 3;
     {
         if(lastPage != 2) {
             KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
-            KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
-            [costVC.cash becomeFirstResponder];
-            [costVC.cash selectAll:self];
+            
+//待优化.................
+            if ([accountVC.currentVC isKindOfClass:[KOMCostViewController class]]) {
+                KOMCostViewController *tempVC = (KOMCostViewController *)accountVC.currentVC;
+                [tempVC.cash becomeFirstResponder];
+                [tempVC.cash selectAll:self];
+            }
+            else if ([accountVC.currentVC isKindOfClass:[KOMIncomeViewController class]]) {
+                KOMIncomeViewController *tempVC = (KOMIncomeViewController *)accountVC.currentVC;
+                [tempVC.cash becomeFirstResponder];
+                [tempVC.cash selectAll:self];
+            }
+            else if ([accountVC.currentVC isKindOfClass:[KOMDebitViewController class]]) {
+                KOMDebitViewController *tempVC = (KOMDebitViewController *)accountVC.currentVC;
+                [tempVC.cash becomeFirstResponder];
+                [tempVC.cash selectAll:self];
+            }
+            else if ([accountVC.currentVC isKindOfClass:[KOMCreditViewController class]]) {
+                KOMCreditViewController *tempVC = (KOMCreditViewController *)accountVC.currentVC;
+                [tempVC.cash becomeFirstResponder];
+                [tempVC.cash selectAll:self];
+            }          
         }
     }
     else
     {
         KOMAccountingViewController *accountVC = [_viewControllers objectAtIndex:2];
-        KOMCostViewController *costVC = [accountVC.childViewControllers objectAtIndex:3];
-        [costVC.cash resignFirstResponder];
+        [accountVC.currentVC.view endEditing:YES];
     }
     if (currentPage == 1) {
         KOMMainPageViewController *mainVC = [_viewControllers objectAtIndex:1];
